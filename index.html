@@ -2,87 +2,2279 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#6558e8">
-<title>圖解力實驗室｜資訊圖表互動教材</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="資訊圖表 Infographics 的完整理論、技巧、資料倫理、AI 應用與高中教學實作。">
+<title>視覺化設計：資訊圖表（Infographics）｜互動式完整教材</title>
 <style>
-:root{--ink:#20213d;--muted:#62647d;--paper:#fffdf8;--purple:#6558e8;--cyan:#19b8c6;--orange:#ff9f2e;--pink:#f45b8c;--green:#27ad79;--yellow:#ffd85a;--line:#deddf1;--shadow:0 18px 55px rgba(45,38,104,.13);--r:24px}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:radial-gradient(circle at 90% 2%,#eee8ff 0,transparent 25%),radial-gradient(circle at 5% 25%,#dffbfb 0,transparent 20%),var(--paper);color:var(--ink);font:18px/1.75 system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif}button,input,select{font:inherit}button{cursor:pointer}.skip{position:fixed;left:12px;top:-80px;background:#111;color:#fff;padding:10px 16px;z-index:99}.skip:focus{top:12px}.topbar{position:sticky;top:0;z-index:30;height:74px;display:flex;align-items:center;gap:12px;padding:10px clamp(16px,4vw,48px);background:rgba(255,253,248,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(101,88,232,.13)}.brand{font-weight:900;letter-spacing:.03em;white-space:nowrap}.brand b{color:var(--purple)}.topbar .spacer{flex:1}.iconbtn,.pillbtn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;min-height:44px;padding:8px 14px;box-shadow:0 5px 15px #463a7410}.iconbtn{width:46px;padding:0}.progress-wrap{width:min(230px,25vw)}.progress-label{font-size:13px;color:var(--muted);display:flex;justify-content:space-between}.progress{height:8px;background:#e9e7f5;border-radius:9px;overflow:hidden}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple),var(--pink));transition:.4s}.hero{max-width:1260px;margin:auto;padding:clamp(55px,8vw,100px) clamp(20px,5vw,64px) 55px;display:grid;grid-template-columns:1.2fr .8fr;gap:55px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;background:#eceaff;color:#4c42bd;border-radius:999px;padding:8px 14px;font-weight:800;font-size:15px}.hero h1{font-size:clamp(46px,7vw,92px);line-height:1.04;margin:18px 0;letter-spacing:-.055em}.hero h1 span{color:transparent;background:linear-gradient(100deg,var(--purple),var(--pink),var(--orange));background-clip:text}.hero p{font-size:clamp(19px,2vw,24px);max-width:720px;color:var(--muted)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.primary{border:0;background:var(--ink);color:#fff;border-radius:16px;padding:14px 22px;font-weight:800;box-shadow:0 10px 25px #20213d3d}.secondary{border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:16px;padding:12px 20px;font-weight:800}.hero-art{aspect-ratio:1;position:relative;display:grid;place-items:center}.orbit{position:absolute;border:2px dashed #a9a4df;border-radius:50%;inset:9%;animation:spin 28s linear infinite}.orbit:after,.orbit:before{content:"";position:absolute;width:34px;height:34px;border-radius:10px;background:var(--orange);top:9%;left:8%;box-shadow:260px 200px 0 var(--pink)}.poster{width:65%;background:white;border:2px solid var(--ink);border-radius:20px;padding:8%;transform:rotate(3deg);box-shadow:var(--shadow);position:relative}.poster .mini-title{height:18px;background:var(--purple);border-radius:8px;width:70%;margin-bottom:22px}.bars{display:flex;align-items:end;gap:10px;height:130px}.bars i{flex:1;border-radius:9px 9px 3px 3px;transform-origin:bottom;animation:grow 1.2s both}.bars i:nth-child(1){height:42%;background:var(--cyan)}.bars i:nth-child(2){height:76%;background:var(--orange);animation-delay:.1s}.bars i:nth-child(3){height:58%;background:var(--pink);animation-delay:.2s}.bars i:nth-child(4){height:92%;background:var(--green);animation-delay:.3s}.dots{display:flex;gap:8px;margin-top:18px}.dots i{width:16px;height:16px;border-radius:50%;background:var(--yellow)}.overview{max-width:1160px;margin:0 auto 90px;padding:0 20px}.formula{padding:25px;border-radius:22px;background:linear-gradient(115deg,#252446,#40368a);color:white;text-align:center;font-size:clamp(20px,3vw,30px);font-weight:900;box-shadow:var(--shadow)}.formula em{font-style:normal;color:var(--yellow)}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px}.kpi{padding:22px;border:1px solid var(--line);background:#fff;border-radius:20px}.kpi b{display:block;font-size:22px}.kpi span{color:var(--muted)}.layout{max-width:1360px;margin:auto;padding:0 28px 120px;display:grid;grid-template-columns:290px minmax(0,1fr);gap:42px}.side{position:sticky;top:95px;height:calc(100vh - 120px);overflow:auto;background:#fff;border:1px solid var(--line);border-radius:24px;padding:16px;box-shadow:var(--shadow)}.side h2{font-size:15px;margin:3px 8px 12px;color:var(--muted)}.navbtn{width:100%;border:0;background:transparent;text-align:left;padding:10px 12px;border-radius:12px;color:#51526a;font-weight:700;font-size:15px}.navbtn:hover,.navbtn.active{background:#eeeaff;color:#4e43bd}.navbtn small{display:inline-grid;place-items:center;width:26px;height:26px;margin-right:8px;border-radius:8px;background:#f4f3fb}.content{min-width:0}.section{margin:0 0 34px;background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:0 12px 40px #40368a0b}.section-head{padding:30px clamp(22px,5vw,48px);display:flex;gap:18px;align-items:center;border-bottom:1px solid var(--line)}.num{font-weight:950;font-size:20px;color:white;background:var(--purple);border-radius:15px;min-width:50px;height:50px;display:grid;place-items:center}.section-head h2{font-size:clamp(25px,3.5vw,38px);line-height:1.2;margin:0}.section-head p{margin:5px 0 0;color:var(--muted)}.section-body{padding:clamp(24px,4vw,46px)}h3{font-size:25px;line-height:1.3;margin:34px 0 12px}h3:first-child{margin-top:0}h4{font-size:20px;margin:20px 0 5px}.lead{font-size:21px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:#faf9ff;border:1px solid var(--line);border-radius:18px;padding:20px}.card .emoji{font-size:30px}.card h4{margin:8px 0 5px}.card p{margin:0;color:var(--muted)}ul.clean{padding-left:1.3em;margin-top:8px}.clean li{margin:5px 0}.callout{margin:20px 0;padding:18px 20px;border-left:6px solid var(--orange);background:#fff5dc;border-radius:8px 16px 16px 8px}.quote{padding:24px;text-align:center;background:#eeecff;border-radius:18px;color:#40378f;font-weight:900;font-size:22px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.flow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.step{flex:1;min-width:130px;background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px;text-align:center}.step b{display:block;color:var(--purple)}.arrow{color:var(--orange);font-weight:900}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px}table{border-collapse:collapse;width:100%;min-width:550px}th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line)}th{background:#29264f;color:#fff}tr:last-child td{border:0}.tag{display:inline-block;padding:3px 10px;margin:3px;border-radius:999px;background:#e2f7f5;color:#116c72;font-size:15px;font-weight:800}.interactive{background:linear-gradient(135deg,#f0efff,#edfcfb);border:2px solid #c9c5f2;border-radius:22px;padding:22px;margin:24px 0}.interactive>h3{display:flex;align-items:center;gap:8px}.choice-row{display:flex;flex-wrap:wrap;gap:8px}.choice{border:1px solid #bbb6e9;background:#fff;border-radius:12px;padding:10px 14px}.choice.selected{background:var(--purple);color:#fff}.demo-bars{height:190px;display:flex;align-items:end;gap:15px;padding:25px 10px 0;border-bottom:2px solid #65627a}.demo-bar{flex:1;max-width:110px;border-radius:12px 12px 0 0;background:linear-gradient(var(--pink),var(--orange));height:var(--h);position:relative;transition:.4s}.demo-bar:hover,.demo-bar:focus{filter:saturate(1.3);transform:translateY(-4px)}.demo-bar span{position:absolute;top:-34px;left:50%;transform:translateX(-50%);font-weight:900}.palette{display:flex;min-height:70px;border-radius:16px;overflow:hidden;margin:16px 0}.palette i{flex:1;display:grid;place-items:center;font-style:normal;font-size:14px;font-weight:900}.checklist label{display:flex;gap:12px;align-items:flex-start;padding:10px;border-radius:10px}.checklist label:hover{background:#fff}.checklist input{width:22px;height:22px;accent-color:var(--green)}.quiz-option{width:100%;display:block;text-align:left;border:1px solid var(--line);background:#fff;border-radius:13px;margin:8px 0;padding:13px}.quiz-option.correct{background:#dbf8e9;border-color:var(--green)}.quiz-option.wrong{background:#ffe5ec;border-color:var(--pink)}.feedback{min-height:32px;font-weight:800}.rubric{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.level{padding:18px;border-radius:16px;background:#f6f5fb;border-top:7px solid var(--c)}.level strong{font-size:22px}.accordion details{border-bottom:1px solid var(--line);padding:14px 0}.accordion summary{font-size:20px;font-weight:850;cursor:pointer}.accordion details>div{padding:10px 0;color:#45465f}.activity{border-left:7px solid var(--c);padding:18px;background:#faf9ff;border-radius:8px 16px 16px 8px}.activity b{font-size:21px}.final-ten{counter-reset:rules;display:grid;grid-template-columns:1fr 1fr;gap:10px}.final-ten div{counter-increment:rules;padding:16px;background:#fff;border:1px solid var(--line);border-radius:14px}.final-ten div:before{content:counter(rules);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--purple);color:#fff;font-weight:900;margin-right:10px}.floating{position:fixed;right:20px;bottom:20px;border:0;background:var(--ink);color:#fff;border-radius:50%;width:56px;height:56px;z-index:20;box-shadow:var(--shadow);font-size:22px}.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,130px);background:#252446;color:#fff;padding:12px 20px;border-radius:999px;z-index:50;transition:.3s}.toast.show{transform:translate(-50%,0)}footer{background:#252446;color:#fff;text-align:center;padding:50px 20px}footer p{color:#c9c7dd}@keyframes spin{to{transform:rotate(360deg)}}@keyframes grow{from{transform:scaleY(0)}}@media(max-width:960px){.hero{grid-template-columns:1fr}.hero-art{max-width:460px;margin:auto;width:90%}.layout{grid-template-columns:1fr}.side{position:relative;top:0;height:auto;display:flex;overflow:auto;padding:10px}.side h2{display:none}.navbtn{white-space:nowrap;width:auto}.cards{grid-template-columns:1fr 1fr}.rubric{grid-template-columns:1fr 1fr}}@media(max-width:640px){body{font-size:17px}.topbar{height:66px;padding:8px 12px}.brand span{display:none}.progress-wrap{display:none}.hero{padding-top:40px}.hero h1{font-size:48px}.hero-art{width:100%}.three,.cards,.grid2,.final-ten{grid-template-columns:1fr}.layout{padding:0 14px 90px}.section-head{align-items:flex-start}.section-head p{display:none}.section-body{padding:22px}.arrow{display:none}.step{flex-basis:100%}.rubric{grid-template-columns:1fr}.pillbtn .txt{display:none}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+:root {
+  --bg:#f4f8fb; --surface:#ffffff; --surface2:#edf5fa; --text:#203243; --muted:#607080;
+  --navy:#153b5b; --blue:#2368a2; --teal:#1e7a8a; --green:#2e8b75; --orange:#e58e3d;
+  --gold:#d7a82b; --red:#c45850; --border:#d9e3eb; --shadow:0 10px 28px rgba(28,61,86,.10);
+  --base-size:20px;
+}
+[data-theme="dark"] {
+  --bg:#101923; --surface:#172331; --surface2:#1d2d3c; --text:#e7f0f7; --muted:#aebdca;
+  --navy:#d5ebfb; --blue:#6eb8ee; --teal:#72d5d8; --green:#76d2b7; --orange:#f5b66f;
+  --gold:#f3cf69; --red:#ef8d85; --border:#324657; --shadow:0 12px 34px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Microsoft JhengHei","微軟正黑體",Arial,sans-serif;background:var(--bg);color:var(--text);font-size:var(--base-size);line-height:1.75}
+button,input,select{font:inherit}
+a{color:var(--blue)}
+#progress{position:fixed;top:0;left:0;height:5px;background:linear-gradient(90deg,var(--blue),var(--teal),var(--orange));width:0;z-index:1000}
+.hero{background:linear-gradient(135deg,#143a5a 0%,#1f6a88 58%,#2d8e7c 100%);color:#fff;padding:72px 24px 54px}
+.hero-inner{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.4fr .8fr;gap:38px;align-items:center}
+.eyebrow{letter-spacing:.12em;font-size:.92rem;font-weight:700;opacity:.9}
+h1{font-size:clamp(2.2rem,5vw,4.4rem);line-height:1.12;margin:.35rem 0 1rem}
+.hero p{font-size:1.16rem;max-width:760px;opacity:.95}
+.formula{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:24px}
+.formula span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.26);padding:8px 12px;border-radius:999px;font-weight:700}
+.formula b{opacity:.75}
+.hero-visual{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.metric{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.24);border-radius:18px;padding:18px;backdrop-filter:blur(8px)}
+.metric strong{font-size:2.1rem;display:block;line-height:1.1}
+.metric small{font-size:.98rem;opacity:.9}
+.toolbar-wrap{position:sticky;top:5px;z-index:50;background:color-mix(in srgb,var(--surface) 94%,transparent);border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
+.toolbar{max-width:1180px;margin:auto;padding:10px 18px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.search{flex:1;min-width:220px;position:relative}
+.search input{width:100%;border:1px solid var(--border);background:var(--surface2);color:var(--text);padding:10px 14px 10px 40px;border-radius:12px;outline:none}
+.search::before{content:'⌕';position:absolute;left:14px;top:5px;font-size:1.35rem;color:var(--muted)}
+.toolbtn{border:1px solid var(--border);background:var(--surface);color:var(--text);padding:9px 12px;border-radius:12px;cursor:pointer}
+.toolbtn:hover{border-color:var(--teal);color:var(--teal)}
+.layout{max-width:1280px;margin:auto;display:grid;grid-template-columns:290px minmax(0,1fr);gap:28px;padding:28px 24px 90px}
+.sidebar{position:sticky;top:80px;align-self:start;max-height:calc(100vh - 105px);overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:14px;box-shadow:var(--shadow)}
+.sidebar h3{margin:4px 8px 10px;font-size:1.1rem;color:var(--navy)}
+.sidebar a{display:flex;gap:8px;text-decoration:none;color:var(--muted);padding:8px 10px;border-radius:10px;font-size:.96rem;line-height:1.5}
+.sidebar a span{color:var(--teal);font-weight:700;min-width:24px}
+.sidebar a:hover,.sidebar a.active{background:var(--surface2);color:var(--navy)}
+main{min-width:0}
+.intro-card,.helper{background:var(--surface);border:1px solid var(--border);border-radius:22px;padding:28px;box-shadow:var(--shadow);margin-bottom:22px}
+.intro-card blockquote,.chapter blockquote{margin:18px 0;padding:18px 20px;border-left:5px solid var(--teal);background:var(--surface2);border-radius:0 14px 14px 0;color:var(--navy);font-weight:700}
+.helper-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.helper label{display:block;font-weight:700;margin-bottom:8px}
+.helper select{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:12px;background:var(--surface2);color:var(--text)}
+#chartAdvice{margin-top:12px;padding:15px;border-radius:14px;background:var(--surface2);border-left:5px solid var(--orange);min-height:72px}
+.principles{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}
+.principle{padding:14px 8px;text-align:center;border-radius:14px;background:var(--surface2);border:1px solid var(--border)}
+.principle strong{display:block;font-size:1.5rem;color:var(--teal)}
+.chapter{background:var(--surface);border:1px solid var(--border);border-radius:20px;margin-bottom:18px;overflow:hidden;box-shadow:0 4px 18px rgba(28,61,86,.05);scroll-margin-top:84px}
+.chapter-head{display:grid;grid-template-columns:54px 1fr 42px;align-items:center;gap:12px;padding:18px 20px;background:linear-gradient(90deg,var(--surface2),var(--surface));border-bottom:1px solid var(--border)}
+.chapter-number{font-size:1.25rem;color:var(--teal);font-weight:800}
+.chapter h2{font-size:1.35rem;line-height:1.35;margin:0;color:var(--navy)}
+.collapse-btn{width:38px;height:38px;border:1px solid var(--border);background:var(--surface);color:var(--teal);border-radius:50%;cursor:pointer;font-size:1.4rem;line-height:1}
+.chapter-body{padding:8px 24px 26px}
+.chapter-body h3{color:var(--teal);margin-top:1.55em;border-left:4px solid var(--teal);padding-left:10px;font-size:1.22rem}
+.chapter-body h4{color:var(--blue);margin:1.2em 0 .35em;font-size:1.08rem}
+.chapter-body p{margin:.62em 0;line-height:1.85}
+.chapter-body ul,.chapter-body ol{padding-left:1.45em}
+.chapter-body li{margin:.22em 0}
+table{border-collapse:collapse;width:100%;margin:16px 0;font-size:1rem;display:block;overflow-x:auto}
+th,td{border:1px solid var(--border);padding:9px 11px;text-align:left;vertical-align:top;min-width:110px}
+th{background:var(--navy);color:var(--surface);white-space:nowrap}
+tr:nth-child(even) td{background:var(--surface2)}
+mark{background:#ffe46a;color:#243342;border-radius:3px;padding:0 2px}
+.encoding-demo{margin-top:20px}
+.encoding-row{display:grid;grid-template-columns:150px 1fr 42px;gap:10px;align-items:center;margin:8px 0;font-size:.98rem}
+.encoding-track{height:10px;background:var(--surface2);border-radius:999px;overflow:hidden}
+.encoding-bar{height:100%;background:linear-gradient(90deg,var(--blue),var(--teal));border-radius:999px}
+.checklist{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.checkitem{display:flex;gap:10px;align-items:flex-start;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:11px}
+.checkitem input{margin-top:6px;transform:scale(1.2)}
+#checkScore{font-weight:700;color:var(--teal);margin-top:10px}
+.fab{position:fixed;right:22px;bottom:22px;width:48px;height:48px;border:0;border-radius:50%;background:var(--teal);color:white;font-size:1.3rem;cursor:pointer;box-shadow:var(--shadow)}
+.empty-state{display:none;background:var(--surface);border:1px dashed var(--border);padding:26px;border-radius:18px;text-align:center;color:var(--muted)}
+footer{max-width:1180px;margin:0 auto 60px;padding:0 24px;text-align:center;color:var(--muted)}
+@media(max-width:900px){
+ .hero-inner{grid-template-columns:1fr} .hero-visual{grid-template-columns:repeat(4,1fr)}
+ .layout{grid-template-columns:1fr;padding:18px 14px 80px} .sidebar{display:none}
+ .helper-grid{grid-template-columns:1fr} .principles{grid-template-columns:repeat(5,120px);overflow-x:auto}
+}
+@media(max-width:620px){
+ body{font-size:var(--base-size)} .hero{padding:58px 18px 36px}
+ .hero-visual{grid-template-columns:1fr 1fr} .toolbar{padding:8px}
+ .toolbtn .label{display:none} .intro-card,.helper{padding:20px;border-radius:17px}
+ .chapter-head{grid-template-columns:42px 1fr 38px;padding:15px 14px;gap:7px} .chapter h2{font-size:1.18rem}
+ .chapter-body{padding:6px 16px 22px} .checklist{grid-template-columns:1fr}
+}
+@media print{
+ #progress,.toolbar-wrap,.sidebar,.collapse-btn,.fab,.helper{display:none!important}
+ body{background:#fff;color:#111;font-size:11pt} .hero{background:#fff;color:#111;padding:20mm 12mm}
+ .hero-visual{display:none} .layout{display:block;padding:0 12mm} .intro-card,.chapter{box-shadow:none;border:0;break-inside:auto}
+ .chapter{break-before:page} .chapter-body{display:block!important} a{color:#111;text-decoration:none}
+}
 </style>
 </head>
 <body>
-<a class="skip" href="#course">跳到主要教材</a>
-<header class="topbar"><div class="brand">📊 <b>圖解力</b><span>實驗室</span></div><div class="spacer"></div><div class="progress-wrap"><div class="progress-label"><span>閱讀進度</span><b id="progressText">0%</b></div><div class="progress"><i id="progressBar"></i></div></div><button class="pillbtn" id="soundBtn" aria-pressed="true" title="切換音效">🔊 <span class="txt">音效開啟</span></button></header>
-<main>
-<section class="hero"><div><span class="eyebrow">✦ 高中生視覺設計課</span><h1>把複雜資訊<br><span>變得一眼就懂</span></h1><p>從視覺心理、圖表選擇到資料故事與 AI 協作，透過 24 章完整教材與互動實驗，練成誠實、清楚又吸睛的資訊圖表。</p><div class="actions"><a class="primary" href="#course">開始學習 →</a><button class="secondary" id="randomBtn">🎲 隨機挑戰一章</button></div></div><div class="hero-art" aria-label="彩色長條圖資訊圖表插圖"><div class="orbit"></div><div class="poster"><div class="mini-title"></div><div class="bars"><i></i><i></i><i></i><i></i></div><div class="dots"><i></i><i></i><i></i></div></div></div></section>
-<section class="overview"><div class="formula">資訊圖表品質 ＝ <em>正確資料</em> × 清楚結構 × 適當視覺 × 明確目的</div><div class="three"><div class="kpi"><b>✓ 資訊正確</b><span>資料可信、比例誠實、來源清楚</span></div><div class="kpi"><b>↳ 結構清楚</b><span>層級明確、閱讀動線自然</span></div><div class="kpi"><b>◉ 視覺易懂</b><span>圖文互補、色彩與圖示一致</span></div></div></section>
-<div class="layout" id="course"><nav class="side" aria-label="課程章節"><h2>24 章內容地圖</h2><div id="navList"></div></nav><div class="content" id="content">
+<div id="progress"></div>
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">VISUAL INFORMATION DESIGN</div>
+      <h1>視覺化設計：<br>資訊圖表</h1>
+      <p>完整整合理論、圖表選擇、版面與色彩、資料倫理、互動設計、AI 輔助流程，以及高中教學活動與評量。</p>
+      <div class="formula"><span>正確內容</span><b>＋</b><span>清楚結構</span><b>＋</b><span>適當圖像</span><b>＋</b><span>視覺敘事</span></div>
+    </div>
+    <div class="hero-visual" aria-label="教材摘要">
+      <div class="metric"><strong>36</strong><small>完整章節</small></div>
+      <div class="metric"><strong>8</strong><small>主要圖表類型</small></div>
+      <div class="metric"><strong>5</strong><small>實用檢核原則</small></div>
+      <div class="metric"><strong>4</strong><small>學習成果層次</small></div>
+    </div>
+  </div>
+</header>
+<div class="toolbar-wrap">
+  <div class="toolbar">
+    <div class="search"><input id="searchInput" type="search" placeholder="搜尋 36 個章節內容…" aria-label="搜尋內容"></div>
+    <button class="toolbtn" id="fontDown" type="button" title="縮小字體">A−</button>
+    <button class="toolbtn" id="fontUp" type="button" title="放大字體">A＋</button>
+    <button class="toolbtn" id="themeToggle" type="button"><span class="label">深淺色</span> ◐</button>
+    <button class="toolbtn" id="toggleAll" type="button"><span class="label">全部收合</span> ⇵</button>
+    <button class="toolbtn" id="printBtn" type="button"><span class="label">列印</span> ⎙</button>
+  </div>
+</div>
+<div class="layout">
+  <aside class="sidebar" aria-label="章節導覽"><h3>36 個章節</h3><a href="#chapter-1" data-chapter="1"><span>01</span>一、資訊圖表的核心目的</a><a href="#chapter-2" data-chapter="2"><span>02</span>二、資訊圖表的重要理論</a><a href="#chapter-3" data-chapter="3"><span>03</span>三、資訊圖表的主要類型</a><a href="#chapter-4" data-chapter="4"><span>04</span>四、如何選擇合適的圖表</a><a href="#chapter-5" data-chapter="5"><span>05</span>五、版面設計技巧</a><a href="#chapter-6" data-chapter="6"><span>06</span>六、文字與字體設計</a><a href="#chapter-7" data-chapter="7"><span>07</span>七、色彩設計技巧</a><a href="#chapter-8" data-chapter="8"><span>08</span>八、圖示與插圖技巧</a><a href="#chapter-9" data-chapter="9"><span>09</span>九、資料敘事技巧</a><a href="#chapter-10" data-chapter="10"><span>10</span>十、資訊圖表製作流程</a><a href="#chapter-11" data-chapter="11"><span>11</span>十一、常見錯誤</a><a href="#chapter-12" data-chapter="12"><span>12</span>十二、實用設計原則</a><a href="#chapter-13" data-chapter="13"><span>13</span>十三、完成前檢查表</a><a href="#chapter-14" data-chapter="14"><span>14</span>十四、適合高中教學的資訊圖表製作架構</a><a href="#chapter-15" data-chapter="15"><span>15</span>十五、視覺編碼的選擇原則</a><a href="#chapter-16" data-chapter="16"><span>16</span>十六、圖表誠信與資料倫理</a><a href="#chapter-17" data-chapter="17"><span>17</span>十七、資訊圖表的視覺敘事模式</a><a href="#chapter-18" data-chapter="18"><span>18</span>十八、資訊圖表中的資料層次</a><a href="#chapter-19" data-chapter="19"><span>19</span>十九、卡片式資訊設計技巧</a><a href="#chapter-20" data-chapter="20"><span>20</span>二十、圖像與文字的搭配模式</a><a href="#chapter-21" data-chapter="21"><span>21</span>二十一、響應式資訊圖表設計</a><a href="#chapter-22" data-chapter="22"><span>22</span>二十二、互動式資訊圖表設計</a><a href="#chapter-23" data-chapter="23"><span>23</span>二十三、動畫的使用原則</a><a href="#chapter-24" data-chapter="24"><span>24</span>二十四、AI 輔助資訊圖表製作流程</a><a href="#chapter-25" data-chapter="25"><span>25</span>二十五、資訊圖表 AI 提示詞範本</a><a href="#chapter-26" data-chapter="26"><span>26</span>二十六、資訊圖表製作工具</a><a href="#chapter-27" data-chapter="27"><span>27</span>二十七、資訊圖表教學活動設計</a><a href="#chapter-28" data-chapter="28"><span>28</span>二十八、學生資訊圖表製作任務範例</a><a href="#chapter-29" data-chapter="29"><span>29</span>二十九、資訊圖表評量規準</a><a href="#chapter-30" data-chapter="30"><span>30</span>三十、自我檢核量表</a><a href="#chapter-31" data-chapter="31"><span>31</span>三十一、常見版面範本</a><a href="#chapter-32" data-chapter="32"><span>32</span>三十二、資訊圖表案例分析架構</a><a href="#chapter-33" data-chapter="33"><span>33</span>三十三、資訊圖表設計的進階原則</a><a href="#chapter-34" data-chapter="34"><span>34</span>三十四、資訊圖表設計的三個層次</a><a href="#chapter-35" data-chapter="35"><span>35</span>三十五、資訊圖表的最終設計公式</a><a href="#chapter-36" data-chapter="36"><span>36</span>三十六、結語</a></aside>
+  <main id="content">
+    <section class="intro-card">
+      <h2>資訊圖表的基本概念</h2>
+      
+<p>資訊圖表是將<strong>資料、概念、流程與故事</strong>轉化為容易閱讀、快速理解且便於記憶的視覺內容。它不只是把文字加上圖片，而是透過資訊整理、視覺編碼與版面設計，降低讀者的理解負擔。</p>
+<blockquote>
+<p>資訊圖表＝正確內容＋清楚結構＋適當圖像＋視覺敘事</p>
+</blockquote>
 
-<article class="section" id="ch1"><header class="section-head"><div class="num">01</div><div><h2>什麼是資訊圖表？</h2><p>不是裝飾文字，而是設計理解</p></div></header><div class="section-body"><p class="lead">資訊圖表（Infographics）整合<strong>資料、文字、圖像、圖示、圖表與版面</strong>，讓複雜內容能被快速理解、比較與記憶。</p><div class="cards"><div class="card"><div class="emoji">⚡</div><h4>快速掌握</h4><p>抓到核心重點，減少尋找資訊的時間。</p></div><div class="card"><div class="emoji">🔗</div><h4>看見關係</h4><p>理解流程、順序、比較與因果。</p></div><div class="card"><div class="emoji">🧠</div><h4>記住與行動</h4><p>建立記憶線索，幫助判斷或採取行動。</p></div></div><div class="callout"><strong>好作品的三個基本條件：</strong>資訊正確、結構清楚、視覺易懂。</div></div></article>
-
-<article class="section" id="ch2"><header class="section-head"><div class="num">02</div><div><h2>資訊圖表的核心理論</h2><p>七個讓大腦更容易理解的設計原理</p></div></header><div class="section-body accordion"><details open><summary>1. 視覺層級：安排「先看什麼」</summary><div>用字體大小、位置、色彩、留白、粗細與對比，引導順序：<strong>主標題 → 核心數據／主圖 → 區塊標題 → 說明 → 來源</strong>。大字、高對比、上方／中央、獨立且留白多的元素會先被看見；若所有元素都醒目，就等於沒有重點。</div></details><details><summary>2. 完形心理學：大腦會自動分組</summary><div><span class="tag">接近性</span>相近元素視為一組。<span class="tag">相似性</span>同色、同形、同大小視為同類。<span class="tag">連續性</span>視線沿箭頭與排列前進。<span class="tag">封閉性</span>大腦會補足不完整輪廓。<span class="tag">圖與地</span>主資訊需和背景清楚分離。</div></details><details><summary>3. 認知負荷：把腦力留給真正的內容</summary><div>內在負荷來自內容難度；外在負荷來自小字、色彩過多、意義不明的圖示、混亂排列與裝飾；有效負荷則是讀者理解和建立知識的思考。設計要降低不必要的外在負荷。</div></details><details><summary>4. 雙碼理論：文字與圖像互補</summary><div>語文系統處理文字、語句、標籤；視覺系統處理圖片、圖示、圖表與位置。例如水循環同時用「蒸發／凝結／降水」文字、雲水滴太陽圖示與方向箭頭。無關裝飾反而干擾。</div></details><details><summary>5. 前注意特徵：一瞬間抓住差異</summary><div>顏色、大小、形狀、方向、位置、長度、粗細與明暗可快速凸顯最大值、異常值、年份、步驟、警告與按鈕；但強調太多就會失效。</div></details><details><summary>6. 資料墨水比：每個元素都要有功能</summary><div>弱化過粗格線、不必要邊框、立體陰影、裝飾背景、重複圖例與無意義圖案。極簡不是單調，而是讓重要資訊更明顯。</div></details><details><summary>7. 視覺敘事：讓資料有路徑</summary><div><div class="flow"><div class="step"><b>背景</b>為何重要</div><span class="arrow">→</span><div class="step"><b>問題</b>發生什麼</div><span class="arrow">→</span><div class="step"><b>證據</b>資料支持</div><span class="arrow">→</span><div class="step"><b>分析</b>代表什麼</div><span class="arrow">→</span><div class="step"><b>結論／行動</b>下一步</div></div></div></details><div class="interactive"><h3>🧪 立即測驗</h3><p>在一群灰點中放一個紅點，運用了哪個原理？</p><button class="quiz-option" data-answer="true">前注意特徵</button><button class="quiz-option">資料墨水比</button><button class="quiz-option">封閉性</button><div class="feedback" aria-live="polite"></div></div></div></article>
-
-<article class="section" id="ch3"><header class="section-head"><div class="num">03</div><div><h2>資訊圖表的常見類型</h2><p>依資料關係選擇形式</p></div></header><div class="section-body"><div class="cards"><div class="card"><div class="emoji">📊</div><h4>統計型</h4><p>問卷、人口、使用率、成長率、排名；突出數字並給比較基準。</p></div><div class="card"><div class="emoji">🪜</div><h4>流程型</h4><p>研究、實驗、解題或查證步驟；用編號、箭頭與一致節點。</p></div><div class="card"><div class="emoji">🕰️</div><h4>時間軸</h4><p>歷史、科技演進、專案與學習歷程；時間方向必須固定。</p></div><div class="card"><div class="emoji">⚖️</div><h4>比較型</h4><p>項目異同；使用並排欄、比較表、雷達圖或雙向結構。</p></div><div class="card"><div class="emoji">🌳</div><h4>階層型</h4><p>分類與上下關係；樹狀圖、金字塔、同心圓。</p></div><div class="card"><div class="emoji">🗺️</div><h4>地理型</h4><p>地區差異；標明圖例、單位、範圍與資料時間。</p></div><div class="card"><div class="emoji">🔬</div><h4>解剖／構造型</h4><p>部位、結構與功能；標示線避免交叉，名稱排列整齊。</p></div></div></div></article>
-
-<article class="section" id="ch4"><header class="section-head"><div class="num">04</div><div><h2>資訊圖表的實作技巧</h2><p>從目的、受眾到比例與來源</p></div></header><div class="section-body"><div class="accordion"><details open><summary>先定義目的與受眾</summary><div>回答核心訊息、讀者應知道什麼、是否要行動、用於教學／簡報／社群／報告。把核心訊息濃縮成一句話，例如：「多數高中生會使用生成式 AI，但仍缺乏資料查證習慣。」高中生內容要少術語、多生活案例、短句、易懂圖示、大字級與適量數據。</div></details><details><summary>先架構，再美化</summary><div>分類為核心結論、主要證據、次要說明、案例、行動建議與來源。單張圖通常以 3–5 個主要區塊最易讀；太多就拆成系列。</div></details><details><summary>網格與閱讀動線</summary><div>單欄適合手機，雙欄適合比較，三欄適合同等項目，模組式適合卡片。維持邊界、欄寬、間距、對齊、標題位置一致。橫式可用 Z 型，文字網頁常用 F 型，手機／海報適合垂直動線。</div></details><details><summary>文字、字體與色彩</summary><div>一區一重點；標題盡量一行；長文改條列；數字與單位放一起。全圖 1–2 種字型，靠粗細建立層級。繁中可用 Noto Sans TC、思源黑體、微軟正黑體、台北黑體、jf open 粉圓、Noto Serif TC。採 1 主色、1–2 輔色、中性色與 1 強調色，固定色彩語意且不只靠顏色傳意。</div></details><details><summary>圖示、數據、比例、留白與來源</summary><div>圖示風格、線寬、尺寸一致並加文字標籤。關鍵數據可放大、加粗、強調色、置中與對比，但大型數字不宜過多。長條圖通常從零開始，拒絕 3D 誤導；圓餅總和須 100%。留白用來分組、聚焦、提高可讀性。標明資料來源、時間、樣本數、單位、更新日、製作者與方法。</div></details></div><div class="quote">不佳：根據調查結果可以發現……有百分之七十二……<br>較佳：<strong>72% 學生曾使用生成式 AI</strong></div></div></article>
-
-<article class="section" id="ch5"><header class="section-head"><div class="num">05</div><div><h2>資訊圖表的設計流程</h2><p>九步驟，從問題到輸出</p></div></header><div class="section-body"><div class="flow"><div class="step"><b>1 定義問題</b>主題、目的、受眾、情境</div><span class="arrow">→</span><div class="step"><b>2 蒐集資料</b>可靠、相關、最新</div><span class="arrow">→</span><div class="step"><b>3 整理資料</b>去重、分類、找發現</div><span class="arrow">→</span><div class="step"><b>4 建立敘事</b>先看什麼、最後懂什麼</div><span class="arrow">→</span><div class="step"><b>5 繪製草圖</b>先排版，不急著上色</div><span class="arrow">→</span><div class="step"><b>6 選擇形式</b>圖表、流程、時間軸、地圖</div><span class="arrow">→</span><div class="step"><b>7 視覺設計</b>字體、色彩、圖示、間距</div><span class="arrow">→</span><div class="step"><b>8 檢查測試</b>正確、清楚、手機可讀</div><span class="arrow">→</span><div class="step"><b>9 修正輸出</b>配合平台尺寸格式</div></div></div></article>
-
-<article class="section" id="ch6"><header class="section-head"><div class="num">06</div><div><h2>常見設計錯誤</h2><p>辨認「看起來漂亮，但不好懂」</p></div></header><div class="section-body"><div class="cards"><div class="card"><h4>📄 文章整段貼上</h4><p>先濃縮、分類與重組。</p></div><div class="card"><h4>🌈 色彩過多</h4><p>會破壞分類與層級。</p></div><div class="card"><h4>🎀 無關裝飾</h4><p>圖示若無功能，只增加負荷。</p></div><div class="card"><h4>📢 全部強調</h4><p>每段都大、粗、彩色，就沒有焦點。</p></div><div class="card"><h4>🔎 字級太小</h4><p>大螢幕製作仍要檢查手機與印刷。</p></div><div class="card"><h4>🥧 圖表選錯</h4><p>別用圓餅表時間變化或折線比無序類別。</p></div><div class="card"><h4>❓ 缺少脈絡</h4><p>數字要有時間、單位、樣本與比較基準。</p></div><div class="card"><h4>🧩 風格不一致</h4><p>統一字型、圖示、色彩與間距。</p></div><div class="card"><h4>🤖 過度依賴 AI</h4><p>人工查核資料、文字、比例與來源。</p></div></div></div></article>
-
-<article class="section" id="ch7"><header class="section-head"><div class="num">07</div><div><h2>教學用資訊圖表原則</h2><p>一圖一概念，引導思考與操作</p></div></header><div class="section-body"><p class="lead">高中課程建議一張圖包含：<strong>一個明確主題、3–5 個核心概念、一個生活案例、一個流程或比較、一題反思、一個可採取行動</strong>。</p><div class="callout">「資訊查證」可依序呈現：為何查證 → 五步驟 → 可疑特徵 → 真實案例 → 自我檢核 → 查證工具與來源。</div></div></article>
-
-<article class="section" id="ch8"><header class="section-head"><div class="num">08</div><div><h2>完成檢核表</h2><p>邊點邊檢查，進度會保存在這台裝置</p></div></header><div class="section-body"><div class="interactive checklist" id="checklist"><h3>✅ 我的作品健檢</h3><div class="grid2"><div><h4>內容</h4><label><input type="checkbox">核心訊息能用一句話說明</label><label><input type="checkbox">資料正確且有來源</label><label><input type="checkbox">刪除不必要內容</label><label><input type="checkbox">圖表忠實呈現數據</label><h4>結構</h4><label><input type="checkbox">閱讀順序清楚</label><label><input type="checkbox">區塊分類合理</label><label><input type="checkbox">每區只有一個主要概念</label><label><input type="checkbox">標題與內文層級明確</label></div><div><h4>視覺</h4><label><input type="checkbox">色彩語意一致</label><label><input type="checkbox">字體容易閱讀</label><label><input type="checkbox">圖示風格一致</label><label><input type="checkbox">留白足夠且重點醒目</label><h4>使用</h4><label><input type="checkbox">手機與投影皆可讀</label><label><input type="checkbox">不只用顏色傳達意義</label><label><input type="checkbox">圖片或圖表有替代說明</label><label><input type="checkbox">讀者知道下一步行動</label></div></div><p id="checkResult"><strong>完成 0／16 項</strong></p></div></div></article>
-
-<article class="section" id="ch9"><header class="section-head"><div class="num">09</div><div><h2>資訊圖表的核心公式</h2><p>把設計判斷變成清楚的關係式</p></div></header><div class="section-body"><div class="quote">好資訊圖表 ＝ 正確資料 × 清楚結構 × 適當視覺 × 明確目的</div><p>乘法代表任何一項接近零，整體品質就會大幅下降。美觀不能補救錯誤數據；正確資料若沒有結構，讀者仍難理解。</p></div></article>
-
-<article class="section" id="ch10"><header class="section-head"><div class="num">10</div><div><h2>進階資訊圖表設計理論</h2><p>從內容關係，決定視覺形式</p></div></header><div class="section-body accordion"><details open><summary>1. 訊息優先，而不是形式優先</summary><div>順序應是：找核心問題 → 確認讀者要知道什麼 → 判斷資料關係 → 選視覺形式 → 最後決定風格。重點是「誰最多」用長條、「如何改變」用折線、「如何進行」用流程、「彼此差異」用比較、「概念層次」用階層、「發展順序」用時間軸。</div></details><details><summary>2. 視覺編碼與辨識準確度</summary><div>資料可轉為位置、長度、角度、面積、顏色、明暗、形狀、方向、數量或圖示。通常準確比較的順序為：<strong>相同基準線上的位置 → 長度 → 角度 → 面積 → 色彩深淺 → 圖示數量</strong>。所以精確比較班級平均分數時，長條通常優於圓餅或圖示陣列。</div></details><details><summary>3. 提高訊號與雜訊的比例</summary><div>訊號包括關鍵數據、圖表、標題、標籤、比較基準與來源；雜訊包括過度裝飾、陰影、複雜背景、重複圖示、框線與無關照片。問自己：「刪除後，讀者仍能正確理解嗎？」若可以，就考慮刪除、縮小或弱化。</div></details><details><summary>4. 語意一致性</summary><div>例如綠色始終代表完成、紅色代表風險、藍色代表資料、虛線代表預測、實線代表實際。不要讓同一紅色一處代表問題、另一處卻代表第一名，也不要讓同一圓形忽而代表學生、忽而代表教師。</div></details><details><summary>5. 空間隱喻</summary><div>上方常被理解為較高／重要／進階；下方為基礎／結果；左方為開始／過去／原因；右方為結束／未來／結果；中央是核心，外圍是延伸；上箭頭是成長，下箭頭是下降。時間軸通常左至右、流程通常上至下，不應無故反轉。</div></details><details><summary>6. 外部認知</summary><div>把原本需要在腦中記憶與計算的內容，移到外部視覺空間。例如以比較表並排「問卷／訪談／實驗」的資料形式、優點與限制，讀者便不用先記住三段文字再比較，可降低工作記憶負擔。</div></details></div></article>
-
-<article class="section" id="ch11"><header class="section-head"><div class="num">11</div><div><h2>資訊圖表的構圖方法</h2><p>依照訊息關係安排空間</p></div></header><div class="section-body"><div class="cards"><div class="card"><h4>單一焦點</h4><p>核心數字或概念置中，周圍放目的、工具、困難與行動。適合核心數據、宣導海報與概念解釋。</p></div><div class="card"><h4>上下分層</h4><p>主標題 → 背景 → 核心資料 → 分析 → 結論 → 行動。適合 A4、手機長圖、講義與社群貼文。</p></div><div class="card"><h4>左右比較</h4><p>兩主題分居左右、中間為比較軸；欄寬、標題位置、項目與圖示尺寸一致。</p></div><div class="card"><h4>放射式</h4><p>核心向外連子概念，適合心智圖、素養、分類、關聯與生態系統；不適合表現先後。</p></div><div class="card"><h4>模組卡片式</h4><p>一卡一概念，適合多項重點、工具、步驟、摘要與儀表板；用尺寸、標題、強調色與主次卡建立層級。</p></div><div class="card"><h4>路徑式</h4><p>線條、箭頭或道路引導學習歷程、生涯、研究、闖關與解題；路徑保持簡潔，避免彎曲交叉。</p></div></div></div></article>
-
-<article class="section" id="ch12"><header class="section-head"><div class="num">12</div><div><h2>版面尺寸與媒介設計</h2><p>同一內容，不同載體要重新編排</p></div></header><div class="section-body"><div class="cards"><div class="card"><h4>A4 直式</h4><p>講義、海報、學習單、附件、列印。上 15% 標題導言、中 70% 主內容、下 15% 結論來源；正文至少 10–11pt、標題 24–36pt，保留邊界並確認黑白可辨。</p></div><div class="card"><h4>16:9 簡報</h4><p>投影、課堂、發表、會議。一頁一核心；後排可讀；數字放大、標籤直標、來源不可縮到看不見。</p></div><div class="card"><h4>3:2 橫式</h4><p>教學圖卡、部落格首圖、網頁內容、社群分享、專題；可用左圖右文、左文右圖、三欄、中央加兩側或上標題下流程。</p></div><div class="card"><h4>9:16 直式</h4><p>手機、限時動態、短影音封面與直式圖卡；標題放安全區，少量資訊置中，下方少細節，字比桌面更大。</p></div><div class="card"><h4>響應式網頁</h4><p>桌面多欄、比較、大圖與懸停；手機單欄、垂直閱讀、大按鈕、簡化圖表與點擊展開。</p></div></div><div class="quote">響應式設計不是把整張圖縮小，而是重新安排資訊結構。</div></div></article>
-
-<article class="section" id="ch13"><header class="section-head"><div class="num">13</div><div><h2>不同圖表的設計技巧</h2><p>選對圖、畫對比例、說對故事</p></div></header><div class="section-body"><div class="table-wrap"><table><thead><tr><th>目的</th><th>適合圖表</th><th>關鍵提醒</th></tr></thead><tbody><tr><td>比較類別／排名</td><td>長條圖、水平長條圖</td><td>通常從零開始、排序、直接標值、少格線，拒絕 3D</td></tr><tr><td>時間變化</td><td>折線圖</td><td>時間連續、線不過多、註明轉折，重點看趨勢</td></tr><tr><td>整體占比</td><td>圓餅／百分比長條</td><td>類別 ≤ 5–6，總和 100%；差距小改長條</td></tr><tr><td>分布</td><td>直方圖、箱型圖</td><td>標明尺度與單位</td></tr><tr><td>兩變數關係</td><td>散布圖</td><td>標 X/Y 單位、點的意義、趨勢與異常值；相關不等於因果</td></tr><tr><td>多面向表現</td><td>雷達圖</td><td>不宜超過 6–8 維；精準比較可改分組長條</td></tr><tr><td>親切的數量表達</td><td>象形圖</td><td>說明每個圖示代表多少，並加精確數字</td></tr><tr><td>矩陣高低</td><td>熱圖</td><td>清楚圖例、可辨識色階</td></tr><tr><td>步驟／時間／位置／分類</td><td>流程圖／時間軸／地圖／樹狀圖</td><td>方向、圖例、範圍與層級要清楚</td></tr></tbody></table></div><div class="interactive"><h3>📊 圖表實驗室</h3><p>這份調查的四項結果為 42、76、58、92。點擊圖表找出最大值。</p><div class="demo-bars" role="img" aria-label="四個類別數值分別為42、76、58與92的長條圖"><button class="demo-bar" style="--h:42%" aria-label="A 類 42"><span>42</span></button><button class="demo-bar" style="--h:76%" aria-label="B 類 76"><span>76</span></button><button class="demo-bar" style="--h:58%" aria-label="C 類 58"><span>58</span></button><button class="demo-bar" data-max style="--h:92%" aria-label="D 類 92"><span>92</span></button></div><div class="feedback" id="chartFeedback" aria-live="polite"></div></div></div></article>
-
-<article class="section" id="ch14"><header class="section-head"><div class="num">14</div><div><h2>圖示系統的建立方法</h2><p>讓圖示看起來像同一家族</p></div></header><div class="section-body"><div class="grid2"><div><h3>1. 選定風格</h3><p>線性、填色、扁平、手繪、幾何或立體；一張圖原則上用同一套。</p><h3>2. 統一規格</h3><p>線條粗細、圓角、視覺大小、色彩、外框／填色與陰影方向一致。實際尺寸相同不等於視覺重量相同，要以「看起來同樣大」調整。</p></div><div><h3>3. 圖示不等於文字</h3><p>批判思考、資訊倫理、認知偏誤與媒體素養等抽象概念，不應期待讀者猜測。</p><div class="quote">圖示 ＋ 文字標籤</div></div></div></div></article>
-
-<article class="section" id="ch15"><header class="section-head"><div class="num">15</div><div><h2>資訊圖表中的文字寫作</h2><p>用最少文字說出最重要的事</p></div></header><div class="section-body"><div class="cards"><div class="card"><h4>主標題</h4><p>簡短明確。結論型「七成高中生使用生成式 AI，但查證習慣仍不足」比一般型「高中生生成式 AI 使用調查」更有資訊價值。</p></div><div class="card"><h4>副標題</h4><p>補充調查對象、時間、方法與閱讀指引，例如「本校 328 名學生，分析工具、目的與查證行為」。</p></div><div class="card"><h4>區塊標題</h4><p>直接說明內容。「學生最常使用 AI 完成哪些工作？」比「我們看到了什麼？」清楚。</p></div><div class="card"><h4>圖表註解</h4><p>靠近資料，解釋異常值、轉折、特殊事件、限制與計算方式。</p></div><div class="card"><h4>行動文字</h4><p>要具體：「查證後再分享」、「完成三題自我檢核」、「與同學討論判斷依據」，不要只說「一起努力」。</p></div></div></div></article>
-
-<article class="section" id="ch16"><header class="section-head"><div class="num">16</div><div><h2>色彩系統的進階運用</h2><p>顏色要有任務，不只是好看</p></div></header><div class="section-body"><div class="choice-row" id="paletteChoices"><button class="choice selected" data-palette="category">類別色彩</button><button class="choice" data-palette="sequential">順序色彩</button><button class="choice" data-palette="diverging">雙向色彩</button></div><div class="palette" id="palette"><i style="background:#ff9f2e">人文</i><i style="background:#4e9bf5;color:white">科學</i><i style="background:#8c62e8;color:white">藝術</i><i style="background:#36b77d">社會</i></div><p id="paletteDesc">不同顏色代表不同類別，適合分類資料，但顏色不要過多。</p><div class="grid2"><div><h3>語意色彩</h3><p>紅色可能表示危險、錯誤、熱情、喜慶或重要；要搭配文化、文字與情境判斷。</p></div><div><h3>足夠對比</h3><p>避免黃字白底、淺灰白底、紅綠相配、藍紫相配或彩色文字壓在複雜照片上。圖片上的字可加半透明色塊、底板、陰影、模糊或局部暗化。</p></div></div></div></article>
-
-<article class="section" id="ch17"><header class="section-head"><div class="num">17</div><div><h2>無障礙設計</h2><p>讓更多人能看見、理解與操作</p></div></header><div class="section-body"><div class="cards"><div class="card"><h4>不只依賴顏色</h4><p>搭配標籤、圖案、線條樣式、圖示、位置與數值；折線也可用實線、虛線、點線與不同節點。</p></div><div class="card"><h4>足夠字級</h4><p>行動裝置接近一般正文大小；投影要考慮教室後排。</p></div><div class="card"><h4>替代內容</h4><p>提供圖像替代文字、圖表摘要、資料表與文字版結論，描述核心訊息而非裝飾。</p></div><div class="card"><h4>節制動畫</h4><p>可逐步呈現流程、強調變化、顯示操作結果與展開說明；避免閃爍、無限跳動、大量旋轉與快速移動。</p></div></div><div class="callout"><strong>替代文字例：</strong>長條圖顯示，學生最常使用生成式 AI 進行資料整理，占 68%；其次為內容摘要，占 54%。</div></div></article>
-
-<article class="section" id="ch18"><header class="section-head"><div class="num">18</div><div><h2>互動設計</h2><p>讓讀者主動探索，而不只是被動觀看</p></div></header><div class="section-body"><div class="cards"><div class="card"><h4>篩選</h4><p>依年級、年度、類別、地區、性別或主題查看資料。</p></div><div class="card"><h4>提示</h4><p>懸停或點擊顯示完整數值、比例、說明、來源與補充；手機一定要支援點擊。</p></div><div class="card"><h4>展開收合</h4><p>核心先看、細節後開，這就是「漸進式揭露」。</p></div><div class="card"><h4>動態比較</h4><p>選不同年度、學校、AI 工具、方法或地區並排比較。</p></div><div class="card"><h4>情境模擬</h4><p>調閱讀時間、預算、碳排行為或研究方法，立即觀察結果。</p></div><div class="card"><h4>即時回饋</h4><p>顯示答對／錯、完成比例、下一步、風險提醒或學習建議。</p></div></div><div class="interactive"><h3>📚 閱讀量模擬器</h3><label for="hours">每週閱讀時間：<strong id="hoursValue">3</strong> 小時</label><input id="hours" type="range" min="0" max="14" value="3" style="width:100%"><p>一年約可閱讀 <strong id="bookResult" style="font-size:36px;color:var(--purple)">16</strong> 本書（以每本平均 9.5 小時計）。</p></div></div></article>
-
-<article class="section" id="ch19"><header class="section-head"><div class="num">19</div><div><h2>資訊圖表與資料故事</h2><p>數據不只回答「多少」，也引導「然後呢」</p></div></header><div class="section-body"><div class="flow"><div class="step"><b>主角</b>學生、學校、政策、社會問題、歷史或科學現象</div><span class="arrow">→</span><div class="step"><b>問題</b>為何借閱下降？哪類書最熱門？</div><span class="arrow">→</span><div class="step"><b>轉折</b>整體下降，但自然科學類上升</div><span class="arrow">→</span><div class="step"><b>解釋</b>區分事實、可能解釋與待驗證假設</div><span class="arrow">→</span><div class="step"><b>行動</b>調整採購、開放時段、推廣或支持措施</div></div><div class="callout">資料顯示相關現象，不一定直接證明原因。例如高一借閱較多「可能」與新生推廣活動有關，仍需訪談確認。</div></div></article>
-
-<article class="section" id="ch20"><header class="section-head"><div class="num">20</div><div><h2>AI 輔助資訊圖表設計</h2><p>把 AI 當助手，把查核留在人手上</p></div></header><div class="section-body"><div class="grid2"><div><h3>AI 可以協助</h3><p><span class="tag">內容</span>摘要、數據、條列、標題、架構。<br><span class="tag">規劃</span>圖表、動線、配色、比例、草圖。<br><span class="tag">圖像</span>插圖、情境、背景、圖示概念、風格參考。<br><span class="tag">檢查</span>文字長度、重複、層級、可讀性、替代文字。</p></div><div><h3>AI 的風險</h3><ul class="clean"><li>虛構數據、研究或來源</li><li>錯字、缺字、異體字、亂碼、數值不一致</li><li>圖表比例錯誤或圖示數量不符</li><li>不同批次風格不一致</li><li>版權、使用條款與來源未確認</li></ul></div></div><h3>建議工作流程</h3><div class="flow"><div class="step"><b>人工</b>主題目的＋可靠資料</div><span class="arrow">→</span><div class="step"><b>AI</b>整理內容＋建議架構</div><span class="arrow">→</span><div class="step"><b>人工</b>查核數據來源＋選圖</div><span class="arrow">→</span><div class="step"><b>AI</b>初步視覺稿</div><span class="arrow">→</span><div class="step"><b>人工</b>修正比例文字＋測試輸出</div></div><div class="interactive"><h3>✨ AI 提示詞組裝器</h3><p>結構：角色＋受眾＋主題＋目標＋內容＋視覺形式＋風格＋版面＋限制＋輸出格式</p><div class="grid2"><label>主題<input id="promptTopic" value="生成式 AI 資訊查證五步驟" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"></label><label>形式<select id="promptForm" style="width:100%;padding:10px;border:1px solid var(--line);border-radius:10px"><option>五步驟流程圖</option><option>比較型資訊圖表</option><option>時間軸</option></select></label></div><button class="primary" id="promptBtn" style="margin-top:12px">產生提示詞</button><div class="callout" id="promptOutput">點擊按鈕產生完整提示詞。</div></div></div></article>
-
-<article class="section" id="ch21"><header class="section-head"><div class="num">21</div><div><h2>品質評量規準</h2><p>用五面向、四等級提供具體回饋</p></div></header><div class="section-body"><div class="table-wrap"><table><thead><tr><th>面向</th><th>評量重點</th></tr></thead><tbody><tr><td>資訊正確性</td><td>資料、數字、文字與來源是否正確</td></tr><tr><td>結構清晰度</td><td>閱讀順序、分類與層級是否明確</td></tr><tr><td>視覺表現</td><td>色彩、字體、圖示與版面是否一致</td></tr><tr><td>溝通效果</td><td>是否能快速理解核心訊息</td></tr><tr><td>使用適切性</td><td>是否適合受眾、媒介與閱讀情境</td></tr></tbody></table></div><h3>四級評量</h3><div class="rubric"><div class="level" style="--c:#27ad79"><strong>4 優良</strong><p>核心明確；資料完整正確；選圖適切；層級清楚；風格一致；能理解並行動。</p></div><div class="level" style="--c:#19b8c6"><strong>3 良好</strong><p>大多正確；結構大致清楚；少數略擁擠；風格基本一致；核心可理解。</p></div><div class="level" style="--c:#ff9f2e"><strong>2 待改進</strong><p>重點不明；缺來源；版面較亂；圖表不完全適合；文字過多或太小。</p></div><div class="level" style="--c:#f45b8c"><strong>1 不足</strong><p>資訊錯漏；順序不明；圖表誤導；風格不一致；核心難理解。</p></div></div></div></article>
-
-<article class="section" id="ch22"><header class="section-head"><div class="num">22</div><div><h2>學生資訊圖表實作活動</h2><p>四項可直接帶進教室的任務</p></div></header><div class="section-body"><div class="grid2"><div class="activity" style="--c:#6558e8"><b>活動一｜文章轉資訊圖表</b><p>選 500–800 字文章：找主旨 → 擷取 5 重點 → 刪次要 → 選圖表 → 畫草圖 → 設計 → 標來源 → 同儕回饋。練摘要、分類、圖文轉譯與視覺表達。</p></div><div class="activity" style="--c:#f45b8c"><b>活動二｜錯誤圖表診斷</b><p>找出圓餅超過 100%、長條基準不一、色意混亂、缺單位、小字、圖示比例誤導、來源不明。說明問題、誤解與修法。</p></div><div class="activity" style="--c:#19b8c6"><b>活動三｜同資料多種視覺化</b><p>同一資料做長條圖、圓餅圖、象形圖與比較表；討論哪種最好比較、最吸引、最精確、最適合高中生。</p></div><div class="activity" style="--c:#ff9f2e"><b>活動四｜校園資料視覺化</b><p>可選借閱、閱讀、通勤、能源、社團、手機時間、自主學習；完成問題設定、資料整理、圖表、解釋與行動建議。</p></div></div></div></article>
-
-<article class="section" id="ch23"><header class="section-head"><div class="num">23</div><div><h2>資訊圖表設計範例架構</h2><p>三個可延伸成作品的教學情境</p></div></header><div class="section-body accordion"><details open><summary>範例一｜小論文研究流程：從興趣到成果發表</summary><div>發現興趣 → 選定主題 → 縮小範圍 → 提出研究問題 → 蒐集資料 → 評估來源 → 選研究方法 → 分析資料 → 撰寫 → 修改校對 → 標示引用 → 成果發表。適合垂直流程、路徑圖、闖關地圖、時間軸或循環圖。</div></details><details><summary>範例二｜看到 AI 生成內容，先做五項查證</summary><div>查看原始來源 → 確認作者與機構 → 比對其他可信資料 → 檢查日期與脈絡 → 判斷證據是否充分。適合五步驟流程、盾牌結構、檢核表或環形流程。</div></details><details><summary>範例三｜高中生最常閱讀哪些類型的書？</summary><div>內容可含熱門類別排行、年級差異、借閱月份趨勢、熱門書籍、閱讀動機與採購建議。適合儀表板、長條、折線、關鍵數字卡與書籍圖示陣列。</div></details></div></article>
-
-<article class="section" id="ch24"><header class="section-head"><div class="num">24</div><div><h2>資訊圖表設計的最終原則</h2><p>完成作品前，牢記這十件事</p></div></header><div class="section-body"><div class="final-ten"><div>先確認目的，再選擇形式。</div><div>先整理資訊，再進行美化。</div><div>一張圖只聚焦一個核心主題。</div><div>使用適合資料關係的圖表。</div><div>讓重要資訊最先被看見。</div><div>文字、圖像與數據互相支持。</div><div>刪除不必要裝飾與重複內容。</div><div>色彩、字體與圖示保持一致。</div><div>資料正確、比例誠實並標來源。</div><div>從目標受眾的閱讀情境測試。</div></div><div class="quote" style="margin-top:24px">最理想的資訊圖表，讓讀者自然理解：<br>「在說什麼、為什麼重要、我接下來可以做什麼。」</div><div class="interactive"><h3>🏁 最後一題</h3><p>下列哪個做法最符合完整教材的核心精神？</p><button class="quiz-option">盡量放入全部資料，避免遺漏</button><button class="quiz-option" data-answer="true">先確認目的與受眾，再用誠實資料和適合形式引導理解</button><button class="quiz-option">每個元素都用強烈色彩，確保吸睛</button><div class="feedback" aria-live="polite"></div></div></div></article>
-
-</div></div></main>
-<button class="floating" id="topBtn" aria-label="回到頁首" title="回到頁首">↑</button><div class="toast" id="toast" role="status"></div>
-<footer><h2>圖解力實驗室</h2><p>完整內容改編自《視覺化設計：資訊圖表（Infographics）完整教學版》48 頁教材。</p><p>適用於教師投影教學、課堂活動與學生自學。</p></footer>
+    </section>
+    <section class="helper" aria-labelledby="helperTitle">
+      <h2 id="helperTitle">互動式設計助手</h2>
+      <div class="helper-grid">
+        <div>
+          <label for="questionType">你想回答哪一類問題？</label>
+          <select id="questionType">
+            <option value="compare">哪一個較多、較少或排名如何？</option>
+            <option value="trend">數值如何隨時間變化？</option>
+            <option value="part">各部分占整體多少？</option>
+            <option value="relation">兩組數值是否有關聯？</option>
+            <option value="process">事情依什麼順序發生？</option>
+            <option value="space">地區之間有何差異？</option>
+            <option value="hierarchy">概念如何分層或包含？</option>
+          </select>
+          <div id="chartAdvice" aria-live="polite"></div>
+        </div>
+        <div>
+          <strong>視覺編碼精確度</strong>
+          <div class="encoding-demo" aria-label="視覺編碼精確度概念排序">
+            <div class="encoding-row"><span>共同座標位置</span><div class="encoding-track"><div class="encoding-bar" style="width:100%"></div></div><b>100</b></div>
+            <div class="encoding-row"><span>長度</span><div class="encoding-track"><div class="encoding-bar" style="width:91%"></div></div><b>91</b></div>
+            <div class="encoding-row"><span>角度／斜率</span><div class="encoding-track"><div class="encoding-bar" style="width:70%"></div></div><b>70</b></div>
+            <div class="encoding-row"><span>面積</span><div class="encoding-track"><div class="encoding-bar" style="width:57%"></div></div><b>57</b></div>
+            <div class="encoding-row"><span>顏色色相</span><div class="encoding-track"><div class="encoding-bar" style="width:24%"></div></div><b>24</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="principles">
+        <div class="principle"><strong>少</strong><small>刪除干擾</small></div>
+        <div class="principle"><strong>準</strong><small>資料正確</small></div>
+        <div class="principle"><strong>清</strong><small>層級清楚</small></div>
+        <div class="principle"><strong>一致</strong><small>規則統一</small></div>
+        <div class="principle"><strong>有意義</strong><small>服務訊息</small></div>
+      </div>
+      <h3>快速自我檢核</h3>
+      <div class="checklist" id="quickChecklist">
+        <label class="checkitem"><input type="checkbox"><span>我能用一句話說出核心訊息。</span></label>
+        <label class="checkitem"><input type="checkbox"><span>圖表形式符合資料的關係。</span></label>
+        <label class="checkitem"><input type="checkbox"><span>資料、年份、單位與來源完整。</span></label>
+        <label class="checkitem"><input type="checkbox"><span>色彩、字型與圖示規則一致。</span></label>
+        <label class="checkitem"><input type="checkbox"><span>手機上仍能清楚閱讀。</span></label>
+        <label class="checkitem"><input type="checkbox"><span>圖表沒有誇大或隱藏差異。</span></label>
+      </div>
+      <div id="checkScore" aria-live="polite">完成 0／6 項</div>
+    </section>
+    <div id="chapters"><section class="chapter" id="section-1" data-title="一、資訊圖表的核心目的">
+  <div class="chapter-head">
+    <div class="chapter-number">01</div>
+    <h2 id="chapter-1">一、資訊圖表的核心目的</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-1" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-1">
+<p>資訊圖表主要有五項功能：</p>
+<ol>
+<li><strong>簡化複雜資訊</strong>：將大量文字、數據或抽象概念轉化為圖像、圖表與流程。</li>
+<li><strong>建立資訊關係</strong>：呈現因果、比較、順序、分類、層級與空間關係。</li>
+<li><strong>提高閱讀效率</strong>：讓讀者先掌握重點，再決定是否深入閱讀。</li>
+<li><strong>加深理解與記憶</strong>：透過圖像、色彩、位置與形狀形成多重記憶線索。</li>
+<li><strong>引導判斷與行動</strong>：不只告訴讀者「發生什麼」，也幫助讀者理解「代表什麼」與「接下來怎麼做」。</li>
+</ol>
+</div>
+</section><section class="chapter" id="section-2" data-title="二、資訊圖表的重要理論">
+  <div class="chapter-head">
+    <div class="chapter-number">02</div>
+    <h2 id="chapter-2">二、資訊圖表的重要理論</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-2" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-2">
+<h3>1. 視覺層級理論</h3>
+<p>視覺層級是利用大小、位置、色彩、粗細與留白，告訴讀者閱讀順序。</p>
+<p>一般閱讀順序為：</p>
+<ol>
+<li>主標題</li>
+<li>核心數據或主要圖像</li>
+<li>分區標題</li>
+<li>圖表與內容</li>
+<li>補充說明與資料來源</li>
+</ol>
+<h4>建立層級的方法</h4>
+<table>
+<thead>
+<tr>
+<th>設計元素</th>
+<th>層級高</th>
+<th>層級低</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字體大小</td>
+<td>大</td>
+<td>小</td>
+</tr>
+<tr>
+<td>字重</td>
+<td>粗體</td>
+<td>細體</td>
+</tr>
+<tr>
+<td>色彩</td>
+<td>高彩度、強對比</td>
+<td>灰色、低彩度</td>
+</tr>
+<tr>
+<td>位置</td>
+<td>上方、中央</td>
+<td>下方、邊緣</td>
+</tr>
+<tr>
+<td>空間</td>
+<td>留白較多、獨立</td>
+<td>與其他內容靠近</td>
+</tr>
+<tr>
+<td>圖像</td>
+<td>大型主視覺</td>
+<td>小型輔助圖示</td>
+</tr>
+</tbody>
+</table>
+<p>一張資訊圖表最好有明確的<strong>第一視覺焦點</strong>，不要讓所有元素都同樣醒目。</p>
+<h3>2. 格式塔心理學</h3>
+<p>格式塔心理學說明人類如何將分散的視覺元素組織成完整意義。</p>
+<h4>接近原則</h4>
+<p>位置相近的元素會被視為同一組。</p>
+<p><strong>應用：</strong>同一主題的標題、數據、圖示與說明應靠近排列。</p>
+<h4>相似原則</h4>
+<p>外觀相似的元素會被認為具有相同功能或類別。</p>
+<p><strong>應用：</strong>同一類別使用相同顏色、形狀或圖示風格。</p>
+<h4>連續原則</h4>
+<p>視線傾向沿著線條、箭頭或排列方向移動。</p>
+<p><strong>應用：</strong>適合流程圖、時間軸與步驟說明。</p>
+<h4>封閉原則</h4>
+<p>即使圖形不完整，大腦也會自動補足。</p>
+<p><strong>應用：</strong>可使用簡化線條與圖形，但不能讓意義過度模糊。</p>
+<h4>圖地關係</h4>
+<p>讀者會區分主要物件與背景。</p>
+<p><strong>應用：</strong>背景應保持單純，不能搶走主要內容的注意力。</p>
+<h3>3. 認知負荷理論</h3>
+<p>人的工作記憶容量有限。資訊過多、版面混亂或圖像無關，都會增加理解負擔。</p>
+<p>資訊圖表應降低三種問題：</p>
+<h4>內容負荷</h4>
+<p>主題本身過於複雜。</p>
+<p><strong>改善方式：</strong>拆成數個階段、模組或小問題。</p>
+<h4>形式負荷</h4>
+<p>資訊呈現方式不佳，例如文字太密、色彩太多、箭頭交叉。</p>
+<p><strong>改善方式：</strong>簡化版面、增加留白、統一視覺語言。</p>
+<h4>無關負荷</h4>
+<p>裝飾圖片、背景花紋或動畫與內容無關。</p>
+<p><strong>改善方式：</strong>刪除不能幫助理解的裝飾元素。</p>
+<p>可以用一句話檢查：</p>
+<blockquote>
+<p>這個元素是否能幫助讀者理解、比較、記憶或行動？</p>
+</blockquote>
+<p>若答案是否定的，就應考慮刪除。</p>
+<h3>4. 雙重編碼理論</h3>
+<p>人類會分別處理語文資訊與視覺資訊。當文字和圖像彼此配合時，理解與記憶效果通常較好。</p>
+<p>例如，介紹「水循環」時：</p>
+<ul>
+<li>只寫文字：理解較慢。</li>
+<li>只畫圖：可能缺少精確說明。</li>
+<li>圖像搭配簡短文字：效果最佳。</li>
+</ul>
+<p>但圖像不能只是裝飾，而必須與文字形成互補。</p>
+<h3>5. 前注意特徵</h3>
+<p>人腦能在尚未仔細閱讀前，快速察覺某些視覺差異，例如：</p>
+<ul>
+<li>顏色</li>
+<li>大小</li>
+<li>方向</li>
+<li>位置</li>
+<li>形狀</li>
+<li>長度</li>
+<li>粗細</li>
+</ul>
+<p>例如，在一群灰色數字中放入一個紅色數字，讀者會立刻注意到它。</p>
+<h4>使用原則</h4>
+<ul>
+<li>強調色每頁以一至兩種為主。</li>
+<li>只突出真正重要的資訊。</li>
+<li>不要把所有內容都設成高彩度或粗體。</li>
+<li>避免只靠顏色傳達差異，應搭配文字、圖案或形狀。</li>
+</ul>
+<h3>6. 圖像優勢效應</h3>
+<p>相較於純文字，人們通常更容易記住具體圖像。</p>
+<p>適合圖像化的內容包括：</p>
+<ul>
+<li>人物</li>
+<li>物件</li>
+<li>地點</li>
+<li>步驟</li>
+<li>結構</li>
+<li>行為</li>
+<li>因果關係</li>
+<li>抽象概念的比喻</li>
+</ul>
+<p>例如，「資訊篩選」可以設計成漏斗；「知識累積」可以設計成階梯；「系統循環」可以設計成環狀流程。</p>
+<h3>7. 資料墨水比</h3>
+<p>資料視覺化學者 Edward Tufte 提出的概念，強調圖表中的視覺元素應主要服務資料，而不是裝飾。</p>
+<p>應減少：</p>
+<ul>
+<li>多餘外框</li>
+<li>厚重格線</li>
+<li>立體陰影</li>
+<li>無意義漸層</li>
+<li>重複標示</li>
+<li>裝飾性圖案</li>
+<li>不必要的座標軸</li>
+</ul>
+<p>簡單不代表單調，而是讓讀者更容易看見資料本身。</p>
+</div>
+</section><section class="chapter" id="section-3" data-title="三、資訊圖表的主要類型">
+  <div class="chapter-head">
+    <div class="chapter-number">03</div>
+    <h2 id="chapter-3">三、資訊圖表的主要類型</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-3" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-3">
+<h3>1. 統計型資訊圖表</h3>
+<p>用來呈現數量、比例、排名與調查結果。</p>
+<p>適合元素：</p>
+<ul>
+<li>長條圖</li>
+<li>折線圖</li>
+<li>圓餅圖</li>
+<li>數字卡</li>
+<li>百分比圖示</li>
+<li>排行榜</li>
+</ul>
+<p>適合主題：</p>
+<ul>
+<li>問卷結果</li>
+<li>閱讀趨勢</li>
+<li>人口統計</li>
+<li>學習成果</li>
+<li>使用行為分析</li>
+</ul>
+<h3>2. 比較型資訊圖表</h3>
+<p>用來呈現兩個以上對象的異同。</p>
+<p>常見形式：</p>
+<ul>
+<li>左右對照</li>
+<li>比較表</li>
+<li>雷達圖</li>
+<li>優缺點矩陣</li>
+<li>前後比較</li>
+<li>同類產品比較</li>
+</ul>
+<p>設計時應先確定共同比較維度，例如價格、功能、適用對象、優點與限制。</p>
+<h3>3. 流程型資訊圖表</h3>
+<p>呈現事情的步驟、程序與操作順序。</p>
+<p>常見形式：</p>
+<ul>
+<li>線性流程</li>
+<li>循環流程</li>
+<li>分支流程</li>
+<li>漏斗流程</li>
+<li>決策樹</li>
+<li>操作步驟圖</li>
+</ul>
+<p>每一步最好包含：</p>
+<blockquote>
+<p>步驟編號＋動作標題＋簡短說明＋圖示</p>
+</blockquote>
+<h3>4. 時間軸資訊圖表</h3>
+<p>呈現事件依時間發展的順序。</p>
+<p>適合主題：</p>
+<ul>
+<li>歷史事件</li>
+<li>科技演進</li>
+<li>生涯歷程</li>
+<li>專案進度</li>
+<li>研究發展</li>
+<li>作品製作過程</li>
+</ul>
+<p>時間軸應清楚標示時間點、事件名稱與關鍵影響，不宜放入過多細節。</p>
+<h3>5. 階層型資訊圖表</h3>
+<p>呈現上下層級、組織架構與包含關係。</p>
+<p>常見形式：</p>
+<ul>
+<li>金字塔</li>
+<li>樹狀圖</li>
+<li>組織圖</li>
+<li>同心圓</li>
+<li>階梯圖</li>
+</ul>
+<p>適合主題：</p>
+<ul>
+<li>馬斯洛需求層次</li>
+<li>生物分類</li>
+<li>組織架構</li>
+<li>知識層級</li>
+<li>概念架構</li>
+</ul>
+<h3>6. 地理型資訊圖表</h3>
+<p>以地圖呈現空間分布、移動路線與地區差異。</p>
+<p>常見形式：</p>
+<ul>
+<li>分級設色地圖</li>
+<li>點位地圖</li>
+<li>路線圖</li>
+<li>區域比較</li>
+<li>熱點分布</li>
+</ul>
+<p>地圖必須附上圖例、範圍、單位與資料來源。</p>
+<h3>7. 解剖與結構型資訊圖表</h3>
+<p>用來拆解一個物件、系統或概念的組成。</p>
+<p>適合主題：</p>
+<ul>
+<li>人體器官</li>
+<li>機械結構</li>
+<li>電腦硬體</li>
+<li>網頁架構</li>
+<li>書籍內容</li>
+<li>學習歷程檔案</li>
+</ul>
+<p>可使用剖面圖、爆炸圖、標註線與局部放大。</p>
+<h3>8. 故事型資訊圖表</h3>
+<p>透過情境、角色與事件發展帶領讀者理解議題。</p>
+<p>基本結構：</p>
+<ol>
+<li>問題情境</li>
+<li>原因或背景</li>
+<li>關鍵發現</li>
+<li>解決方式</li>
+<li>行動建議</li>
+</ol>
+<p>適合公共議題、人物故事、教學案例與社會倡議。</p>
+</div>
+</section><section class="chapter" id="section-4" data-title="四、如何選擇合適的圖表">
+  <div class="chapter-head">
+    <div class="chapter-number">04</div>
+    <h2 id="chapter-4">四、如何選擇合適的圖表</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-4" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-4">
+<table>
+<thead>
+<tr>
+<th>想回答的問題</th>
+<th>建議圖表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>哪一個最多或最少？</td>
+<td>長條圖</td>
+</tr>
+<tr>
+<td>數值如何隨時間變化？</td>
+<td>折線圖</td>
+</tr>
+<tr>
+<td>各部分占整體多少？</td>
+<td>圓餅圖、環形圖、百分比長條</td>
+</tr>
+<tr>
+<td>兩組資料是否有關聯？</td>
+<td>散佈圖</td>
+</tr>
+<tr>
+<td>數據集中在哪個範圍？</td>
+<td>直方圖、盒鬚圖</td>
+</tr>
+<tr>
+<td>不同對象有何差異？</td>
+<td>群組長條圖、比較表</td>
+</tr>
+<tr>
+<td>地區之間有何差異？</td>
+<td>地圖</td>
+</tr>
+<tr>
+<td>事情依什麼順序發生？</td>
+<td>流程圖、時間軸</td>
+</tr>
+<tr>
+<td>概念之間如何連結？</td>
+<td>關係圖、心智圖</td>
+</tr>
+<tr>
+<td>不同層級如何包含？</td>
+<td>樹狀圖、金字塔</td>
+</tr>
+</tbody>
+</table>
+<h3>圓餅圖使用限制</h3>
+<p>圓餅圖只適合：</p>
+<ul>
+<li>各部分合計為完整的 100%。</li>
+<li>類別不超過五至六項。</li>
+<li>類別差異明顯。</li>
+<li>重點是整體占比，而非精確比較。</li>
+</ul>
+<p>類別較多時，改用排序後的長條圖通常更清楚。</p>
+</div>
+</section><section class="chapter" id="section-5" data-title="五、版面設計技巧">
+  <div class="chapter-head">
+    <div class="chapter-number">05</div>
+    <h2 id="chapter-5">五、版面設計技巧</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-5" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-5">
+<h3>1. 先建立閱讀動線</h3>
+<p>常見閱讀動線包括：</p>
+<ul>
+<li>由上到下</li>
+<li>由左到右</li>
+<li>Z 字形</li>
+<li>F 字形</li>
+<li>中心向外</li>
+<li>順時針環狀</li>
+<li>依箭頭移動</li>
+</ul>
+<p>閱讀動線必須明確，不應讓讀者猜測下一步要看哪裡。</p>
+<h3>2. 使用網格系統</h3>
+<p>網格可讓文字、圖片與圖表排列整齊。</p>
+<p>常見網格：</p>
+<ul>
+<li>單欄：適合手機與直式長圖。</li>
+<li>雙欄：適合比較或圖文並排。</li>
+<li>三欄：適合多個平行主題。</li>
+<li>模組網格：適合儀表板與統計資訊。</li>
+<li>卡片式網格：適合分類內容與重點摘要。</li>
+</ul>
+<p>所有元素應盡量對齊共同的基準線或邊界。</p>
+<h3>3. 運用留白</h3>
+<p>留白不是浪費空間，而是幫助讀者：</p>
+<ul>
+<li>區分資訊群組</li>
+<li>找到視覺焦點</li>
+<li>降低閱讀壓力</li>
+<li>提高版面質感</li>
+<li>增加內容節奏</li>
+</ul>
+<p>不要為了填滿版面而加入不必要的文字或裝飾。</p>
+<h3>4. 控制資訊密度</h3>
+<p>一個區塊只傳達一個主要概念。</p>
+<p>建議原則：</p>
+<ul>
+<li>一個段落約二至四行。</li>
+<li>一個圖表聚焦一個問題。</li>
+<li>一個區塊不超過三個重點。</li>
+<li>長句改成短句。</li>
+<li>能用圖像表達的內容，不必全部重複成文字。</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-6" data-title="六、文字與字體設計">
+  <div class="chapter-head">
+    <div class="chapter-number">06</div>
+    <h2 id="chapter-6">六、文字與字體設計</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-6" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-6">
+<h3>1. 建立字體層級</h3>
+<table>
+<thead>
+<tr>
+<th>層級</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主標題</td>
+<td>說明整張資訊圖表的主題</td>
+</tr>
+<tr>
+<td>副標題</td>
+<td>補充範圍或核心問題</td>
+</tr>
+<tr>
+<td>區塊標題</td>
+<td>區分內容模組</td>
+</tr>
+<tr>
+<td>內文</td>
+<td>解釋資訊</td>
+</tr>
+<tr>
+<td>圖表標籤</td>
+<td>標示數值、單位與類別</td>
+</tr>
+<tr>
+<td>資料來源</td>
+<td>提供可信度與查證依據</td>
+</tr>
+</tbody>
+</table>
+<h3>2. 字型選擇</h3>
+<p>繁體中文資訊圖表可使用：</p>
+<ul>
+<li>Noto Sans TC</li>
+<li>思源黑體</li>
+<li>微軟正黑體</li>
+<li>台北黑體</li>
+<li>jf open 粉圓</li>
+<li>LINE Seed Traditional Chinese</li>
+</ul>
+<p>正文以易讀的黑體字為主。手寫字或裝飾字適合少量使用在標題，不宜用於大段內文。</p>
+<h3>3. 字體數量</h3>
+<p>同一張資訊圖表通常使用一至兩套字型即可。</p>
+<p>可使用：</p>
+<ul>
+<li>一套字型，利用大小與粗細建立層級。</li>
+<li>標題一套、正文一套。</li>
+</ul>
+<p>避免每個區塊使用不同字型，造成視覺混亂。</p>
+</div>
+</section><section class="chapter" id="section-7" data-title="七、色彩設計技巧">
+  <div class="chapter-head">
+    <div class="chapter-number">07</div>
+    <h2 id="chapter-7">七、色彩設計技巧</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-7" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-7">
+<h3>1. 色彩的功能</h3>
+<p>資訊圖表中的色彩應用於：</p>
+<ul>
+<li>建立分類</li>
+<li>呈現層級</li>
+<li>強調重點</li>
+<li>顯示狀態</li>
+<li>表達情緒</li>
+<li>引導閱讀</li>
+</ul>
+<p>色彩不是越多越好，而是要有固定規則。</p>
+<h3>2. 建議配色結構</h3>
+<p>可採用：</p>
+<ul>
+<li>一種主色</li>
+<li>一種輔助色</li>
+<li>一種強調色</li>
+<li>灰階背景與文字色</li>
+</ul>
+<p>例如：</p>
+<ul>
+<li>主色：藍色，代表主要內容。</li>
+<li>輔助色：綠色，代表正向或完成。</li>
+<li>強調色：橘色，標示重點。</li>
+<li>灰色：作為背景、次要文字與分隔線。</li>
+</ul>
+<h3>3. 語意一致</h3>
+<p>同一顏色在整張圖中應維持相同意義。</p>
+<p>例如：</p>
+<ul>
+<li>綠色固定代表完成。</li>
+<li>紅色固定代表風險。</li>
+<li>藍色固定代表資訊。</li>
+<li>黃色固定代表提醒。</li>
+</ul>
+<p>不要讓紅色在一個區塊代表「錯誤」，在另一個區塊又代表「一般分類」。</p>
+<h3>4. 無障礙設計</h3>
+<p>應注意：</p>
+<ul>
+<li>文字與背景具有足夠對比。</li>
+<li>不使用過淡的文字。</li>
+<li>避免紅綠色成為唯一辨識方式。</li>
+<li>色彩差異應搭配圖示、文字、線條或形狀。</li>
+<li>重要文字不要直接放在複雜圖片上。</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-8" data-title="八、圖示與插圖技巧">
+  <div class="chapter-head">
+    <div class="chapter-number">08</div>
+    <h2 id="chapter-8">八、圖示與插圖技巧</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-8" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-8">
+<h3>1. 圖示風格一致</h3>
+<p>同一張資訊圖表中的圖示應維持：</p>
+<ul>
+<li>相同線條粗細</li>
+<li>相同圓角程度</li>
+<li>相同視角</li>
+<li>相同色彩邏輯</li>
+<li>相同寫實程度</li>
+</ul>
+<p>不要混合線性圖示、立體圖示、照片與卡通圖案，除非有明確的設計目的。</p>
+<h3>2. 圖示必須搭配標籤</h3>
+<p>部分圖示可能有多種解讀，因此重要圖示應搭配簡短文字。</p>
+<p>例如，放大鏡可能代表：</p>
+<ul>
+<li>搜尋</li>
+<li>研究</li>
+<li>檢查</li>
+<li>放大</li>
+<li>查證</li>
+</ul>
+<p>加入「資料查證」標籤後，意義才會明確。</p>
+<h3>3. 避免過度裝飾</h3>
+<p>人物、場景與背景插圖應服務於內容。若只是讓版面更熱鬧，卻影響閱讀，就應縮小或移除。</p>
+</div>
+</section><section class="chapter" id="section-9" data-title="九、資料敘事技巧">
+  <div class="chapter-head">
+    <div class="chapter-number">09</div>
+    <h2 id="chapter-9">九、資料敘事技巧</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-9" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-9">
+<p>優秀的資訊圖表不是資料堆疊，而是有明確的敘事順序。</p>
+<h3>基本敘事結構</h3>
+<h4>1. 開場：發生了什麼？</h4>
+<p>提出問題、現象或核心數據。</p>
+<h4>2. 發展：為什麼會發生？</h4>
+<p>呈現背景、原因、比較或變化。</p>
+<h4>3. 發現：最重要的資訊是什麼？</h4>
+<p>突出關鍵數據、差異或轉折。</p>
+<h4>4. 解釋：這代表什麼？</h4>
+<p>說明資料的意義，避免只列數字。</p>
+<h4>5. 結論：讀者應該怎麼做？</h4>
+<p>提出結論、建議、行動或延伸問題。</p>
+<h3>標題寫法</h3>
+<p>標題不一定只寫主題名稱，也可以直接呈現發現。</p>
+<p>較普通：</p>
+<blockquote>
+<p>高中生閱讀調查</p>
+</blockquote>
+<p>較有資訊性：</p>
+<blockquote>
+<p>小說仍是高中生最常選擇的閱讀類型</p>
+</blockquote>
+<p>更具敘事性：</p>
+<blockquote>
+<p>從小說到心理勵志書：高中生的閱讀興趣正在改變</p>
+</blockquote>
+</div>
+</section><section class="chapter" id="section-10" data-title="十、資訊圖表製作流程">
+  <div class="chapter-head">
+    <div class="chapter-number">10</div>
+    <h2 id="chapter-10">十、資訊圖表製作流程</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-10" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-10">
+<h3>第一步：確認受眾</h3>
+<p>先回答：</p>
+<ul>
+<li>讀者是誰？</li>
+<li>讀者已經知道什麼？</li>
+<li>他們最需要知道什麼？</li>
+<li>閱讀環境是手機、海報、簡報還是教材？</li>
+<li>希望讀者看完後採取什麼行動？</li>
+</ul>
+<h3>第二步：定義核心訊息</h3>
+<p>用一句話寫出：</p>
+<blockquote>
+<p>看完這張資訊圖表，讀者應該理解〔請填寫〕。</p>
+</blockquote>
+<p>若無法用一句話說清楚，代表主題可能太大。</p>
+<h3>第三步：蒐集與驗證資料</h3>
+<p>檢查：</p>
+<ul>
+<li>資料來源是否可信？</li>
+<li>年份是否一致？</li>
+<li>統計單位是否一致？</li>
+<li>樣本數是否足夠？</li>
+<li>是否省略重要背景？</li>
+<li>圖表是否可能造成誤解？</li>
+</ul>
+<h3>第四步：整理資訊架構</h3>
+<p>可先將內容分成：</p>
+<ol>
+<li>核心問題</li>
+<li>關鍵數據</li>
+<li>原因分析</li>
+<li>比較結果</li>
+<li>結論與建議</li>
+</ol>
+<h3>第五步：畫線框草圖</h3>
+<p>先用簡單方框規劃：</p>
+<ul>
+<li>標題放哪裡？</li>
+<li>第一視覺焦點是什麼？</li>
+<li>內容分成幾區？</li>
+<li>閱讀順序如何？</li>
+<li>哪些內容使用圖表？</li>
+<li>哪些內容使用圖示？</li>
+</ul>
+<p>此階段不必急著選顏色與插圖。</p>
+<h3>第六步：選擇視覺形式</h3>
+<p>根據資訊關係決定使用：</p>
+<ul>
+<li>圖表</li>
+<li>流程圖</li>
+<li>時間軸</li>
+<li>地圖</li>
+<li>比較表</li>
+<li>階層圖</li>
+<li>圖解</li>
+<li>數字卡</li>
+</ul>
+<p>不要先決定要畫哪一種圖，再勉強把資料塞進去。</p>
+<h3>第七步：建立視覺規範</h3>
+<p>先設定：</p>
+<ul>
+<li>主色與輔助色</li>
+<li>標題與內文字型</li>
+<li>圖示風格</li>
+<li>線條粗細</li>
+<li>圓角大小</li>
+<li>區塊間距</li>
+<li>標籤格式</li>
+<li>數字與單位格式</li>
+</ul>
+<h3>第八步：測試與修正</h3>
+<p>完成後可請沒有接觸過主題的人閱讀，並詢問：</p>
+<ul>
+<li>第一眼看到什麼？</li>
+<li>能否在十秒內說出主題？</li>
+<li>閱讀順序是否清楚？</li>
+<li>哪個部分最難理解？</li>
+<li>數據是否容易比較？</li>
+<li>結論是否明確？</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-11" data-title="十一、常見錯誤">
+  <div class="chapter-head">
+    <div class="chapter-number">11</div>
+    <h2 id="chapter-11">十一、常見錯誤</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-11" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-11">
+<h3>1. 文字過多</h3>
+<p>將完整文章直接貼進資訊圖表，會變成「圖像化文件」，而不是真正的資訊圖表。</p>
+<p>改善方式：</p>
+<ul>
+<li>刪除重複內容。</li>
+<li>長句改成關鍵詞。</li>
+<li>一段只保留一個觀點。</li>
+<li>詳細內容改用延伸連結或 QR Code。</li>
+</ul>
+<h3>2. 裝飾大於資訊</h3>
+<p>大量插圖、背景與特效可能很漂亮，卻無法幫助理解。</p>
+<p>改善方式：</p>
+<blockquote>
+<p>先確定資訊結構，再進行美化。</p>
+</blockquote>
+<h3>3. 顏色太多</h3>
+<p>過多顏色會讓分類規則不清楚。</p>
+<p>改善方式：</p>
+<ul>
+<li>限制主色數量。</li>
+<li>相同類別使用相同顏色。</li>
+<li>只讓關鍵內容使用強調色。</li>
+</ul>
+<h3>4. 圖表選擇錯誤</h3>
+<p>例如：</p>
+<ul>
+<li>用圓餅圖呈現十幾個類別。</li>
+<li>用折線圖比較沒有順序的分類。</li>
+<li>使用立體圖表造成比例失真。</li>
+<li>截短座標軸誇大差異。</li>
+</ul>
+<h3>5. 缺少單位與來源</h3>
+<p>數字若沒有年份、單位、樣本數與資料來源，可信度會大幅降低。</p>
+<p>至少應標示：</p>
+<ul>
+<li>資料名稱</li>
+<li>統計年份</li>
+<li>數值單位</li>
+<li>樣本數</li>
+<li>資料來源</li>
+<li>製圖日期</li>
+</ul>
+<h3>6. 所有內容同樣醒目</h3>
+<p>全部使用大字、粗體、亮色，就等於沒有重點。</p>
+<p>改善方式：</p>
+<ul>
+<li>只選一個第一焦點。</li>
+<li>每個區塊只保留一個局部重點。</li>
+<li>次要資訊使用較低彩度與較小字級。</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-12" data-title="十二、實用設計原則">
+  <div class="chapter-head">
+    <div class="chapter-number">12</div>
+    <h2 id="chapter-12">十二、實用設計原則</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-12" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-12">
+<p>可以用以下五個字檢查資訊圖表：</p>
+<h3>少</h3>
+<p>刪除不必要的文字、裝飾與圖表元素。</p>
+<h3>準</h3>
+<p>資料、單位、比例與來源必須正確。</p>
+<h3>清</h3>
+<p>閱讀順序、分類與層級必須清楚。</p>
+<h3>一致</h3>
+<p>顏色、字型、圖示與間距維持固定規則。</p>
+<h3>有意義</h3>
+<p>每個視覺元素都應服務核心訊息。</p>
+</div>
+</section><section class="chapter" id="section-13" data-title="十三、完成前檢查表">
+  <div class="chapter-head">
+    <div class="chapter-number">13</div>
+    <h2 id="chapter-13">十三、完成前檢查表</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-13" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-13">
+<h3>內容</h3>
+<ul>
+<li>主題是否能用一句話說清楚？</li>
+<li>資料是否正確且有來源？</li>
+<li>是否區分事實、推論與建議？</li>
+<li>是否刪除重複資訊？</li>
+</ul>
+<h3>結構</h3>
+<ul>
+<li>第一眼能否看出主題？</li>
+<li>閱讀順序是否明確？</li>
+<li>各區塊是否有清楚分類？</li>
+<li>是否有結論或行動建議？</li>
+</ul>
+<h3>圖表</h3>
+<ul>
+<li>圖表類型是否適合資料？</li>
+<li>是否標示單位、年份與圖例？</li>
+<li>比例與座標軸是否誠實？</li>
+<li>是否能快速比較？</li>
+</ul>
+<h3>視覺</h3>
+<ul>
+<li>顏色是否具有一致意義？</li>
+<li>字體是否清楚且足夠大？</li>
+<li>圖示風格是否一致？</li>
+<li>版面空間是否充足？</li>
+<li>裝飾是否干擾內容？</li>
+</ul>
+<h3>無障礙</h3>
+<ul>
+<li>文字與背景對比是否足夠？</li>
+<li>是否避免只靠顏色區分類別？</li>
+<li>手機上是否仍可閱讀？</li>
+<li>縮小後，重要標籤是否仍清楚？</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-14" data-title="十四、適合高中教學的資訊圖表製作架構">
+  <div class="chapter-head">
+    <div class="chapter-number">14</div>
+    <h2 id="chapter-14">十四、適合高中教學的資訊圖表製作架構</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-14" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-14">
+<p>可引導學生依照下列結構完成作品：</p>
+<ol>
+<li><strong>主題標題</strong>：我要說明什麼？</li>
+<li><strong>核心問題</strong>：為什麼值得關注？</li>
+<li><strong>三個關鍵重點</strong>：最重要的內容是什麼？</li>
+<li><strong>一組數據或證據</strong>：有什麼資料支持？</li>
+<li><strong>一個流程、比較或分類圖</strong></li>
+<li><strong>結論</strong>：資料代表什麼？</li>
+<li><strong>行動建議</strong>：讀者可以怎麼做？</li>
+<li><strong>資料來源與製作者</strong></li>
+</ol>
+<p>評量時可分成五個面向：</p>
+<table>
+<thead>
+<tr>
+<th>評量面向</th>
+<th>重點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>內容正確性</td>
+<td>資料正確、來源可靠</td>
+</tr>
+<tr>
+<td>資訊組織</td>
+<td>結構清楚、閱讀順序明確</td>
+</tr>
+<tr>
+<td>視覺表達</td>
+<td>圖表與圖像適合內容</td>
+</tr>
+<tr>
+<td>設計一致性</td>
+<td>色彩、字型、圖示風格統一</td>
+</tr>
+<tr>
+<td>溝通效果</td>
+<td>能快速理解並留下印象</td>
+</tr>
+</tbody>
+</table>
+<p>資訊圖表設計最重要的觀念是：</p>
+<blockquote>
+<p>先整理資訊，再設計視覺；先確保理解，再追求美觀。</p>
+</blockquote>
+</div>
+</section><section class="chapter" id="section-15" data-title="十五、視覺編碼的選擇原則">
+  <div class="chapter-head">
+    <div class="chapter-number">15</div>
+    <h2 id="chapter-15">十五、視覺編碼的選擇原則</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-15" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-15">
+<p>資訊圖表的核心工作，是將抽象資料轉換成讀者能快速辨識的視覺特徵。這個過程稱為「視覺編碼」。</p>
+<p>常見的視覺編碼包括：</p>
+<ul>
+<li>位置</li>
+<li>長度</li>
+<li>角度</li>
+<li>面積</li>
+<li>體積</li>
+<li>顏色</li>
+<li>明暗</li>
+<li>形狀</li>
+<li>方向</li>
+<li>線條粗細</li>
+<li>圖示數量</li>
+</ul>
+<p>不同視覺編碼的判讀精確度並不相同。</p>
+<h3>1. 視覺編碼的精確度排序</h3>
+<p>一般而言，讀者判讀資料的準確程度大致如下：</p>
+<ol>
+<li>共同座標上的位置</li>
+<li>長度</li>
+<li>不同座標上的位置</li>
+<li>角度與斜率</li>
+<li>面積</li>
+<li>體積</li>
+<li>顏色深淺</li>
+<li>顏色色相</li>
+</ol>
+<p>因此，若要讓讀者精確比較數值，應優先使用：</p>
+<ul>
+<li>點的位置</li>
+<li>長條長度</li>
+<li>相同基準線</li>
+</ul>
+<p>較不適合精確比較的形式包括：</p>
+<ul>
+<li>氣泡大小</li>
+<li>人物圖示大小</li>
+<li>立體柱狀圖</li>
+<li>不規則圖形面積</li>
+<li>顏色深淺差異</li>
+</ul>
+<p>例如，要比較五個班級的平均成績，使用長條圖會比五個大小不同的圓形更容易判讀。</p>
+<h3>2. 位置比面積更容易比較</h3>
+<p>假設甲班平均成績為 80 分，乙班為 60 分。</p>
+<p>若使用長條圖，讀者可以直接比較兩條長度；若使用兩個圓形，讀者必須比較面積，判斷會比較不精確。</p>
+<p>因此：</p>
+<blockquote>
+<p>需要精確比較時使用位置或長度；只需要表達大致規模時，才使用面積或圖示大小。</p>
+</blockquote>
+<h3>3. 顏色適合分類，不適合精確計算</h3>
+<p>顏色非常適合區分類別，例如：</p>
+<ul>
+<li>自然科</li>
+<li>社會科</li>
+<li>語文科</li>
+<li>藝術領域</li>
+</ul>
+<p>但顏色不適合表示需要精確判斷的數值。</p>
+<p>例如，深藍色代表 80 分、淺藍色代表 60 分，讀者很難直接判斷兩者相差多少。</p>
+<p>若使用顏色呈現數值，應搭配：</p>
+<ul>
+<li>數字標籤</li>
+<li>圖例</li>
+<li>明確級距</li>
+<li>相同的色階方向</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-16" data-title="十六、圖表誠信與資料倫理">
+  <div class="chapter-head">
+    <div class="chapter-number">16</div>
+    <h2 id="chapter-16">十六、圖表誠信與資料倫理</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-16" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-16">
+<p>資訊圖表不只要好看，也必須避免誤導。</p>
+<h3>1. 座標軸不可任意截斷</h3>
+<p>長條圖通常應從零開始。若將座標軸從 90 開始，原本只有少量差異的資料可能看起來差距極大。</p>
+<p>例如：</p>
+<ul>
+<li>甲組：96 分</li>
+<li>乙組：94 分</li>
+</ul>
+<p>若座標軸從 0 開始，差異很小；若從 93 開始，甲組的柱狀可能看起來是乙組的三倍。</p>
+<p>折線圖因為主要呈現變化趨勢，有時可以不從零開始，但必須清楚標示刻度。</p>
+<h3>2. 不可利用圖形面積誇大差異</h3>
+<p>若數值增加兩倍，圓形的面積應增加兩倍，而不是半徑增加兩倍。</p>
+<p>因為圓形面積與半徑平方有關，半徑增加兩倍，面積會變成四倍。</p>
+<p>因此，以圖示大小呈現數值時，必須按照面積比例計算。</p>
+<h3>3. 樣本數必須交代清楚</h3>
+<p>「80% 學生支持」可能看起來很有說服力，但若只調查五人，代表性就很有限。</p>
+<p>資訊圖表應標示：</p>
+<ul>
+<li>調查人數</li>
+<li>調查時間</li>
+<li>調查對象</li>
+<li>抽樣方式</li>
+<li>題目內容</li>
+<li>是否允許複選</li>
+</ul>
+<h3>4. 區分相關與因果</h3>
+<p>兩個數據同時變化，不代表其中一個造成另一個。</p>
+<p>例如：</p>
+<blockquote>
+<p>使用手機時間越長的學生，睡眠時間越短。</p>
+</blockquote>
+<p>這只能說明兩者可能有關聯，不能直接斷定手機是睡眠不足的唯一原因。</p>
+<p>較適當的說法是：</p>
+<ul>
+<li>兩者呈現負相關。</li>
+<li>資料顯示兩者可能存在關聯。</li>
+<li>尚需更多研究確認因果關係。</li>
+</ul>
+<h3>5. 避免選擇性呈現</h3>
+<p>只呈現支持特定觀點的資料，省略不利資訊，容易造成偏誤。</p>
+<p>應注意：</p>
+<ul>
+<li>時間範圍是否完整</li>
+<li>是否省略異常數據</li>
+<li>是否只選擇特定群體</li>
+<li>是否忽略其他解釋</li>
+<li>是否使用過時資料</li>
+<li>是否將預測值當成實際結果</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-17" data-title="十七、資訊圖表的視覺敘事模式">
+  <div class="chapter-head">
+    <div class="chapter-number">17</div>
+    <h2 id="chapter-17">十七、資訊圖表的視覺敘事模式</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-17" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-17">
+<p>資訊圖表可以依內容採用不同的故事結構。</p>
+<h3>1. 問題解決型</h3>
+<p>適合公共議題、校園問題與生活議題。</p>
+<p>結構：</p>
+<ol>
+<li>問題是什麼？</li>
+<li>問題有多嚴重？</li>
+<li>為什麼會發生？</li>
+<li>會造成什麼影響？</li>
+<li>可以如何改善？</li>
+</ol>
+<p>例如：</p>
+<blockquote>
+<p>高中生睡眠不足問題</p>
+</blockquote>
+<p>可依序呈現睡眠時間、常見原因、身心影響及改善建議。</p>
+<h3>2. 比較選擇型</h3>
+<p>適合工具、方案、書籍或方法比較。</p>
+<p>結構：</p>
+<ol>
+<li>比較對象</li>
+<li>比較條件</li>
+<li>各自優缺點</li>
+<li>適用情境</li>
+<li>選擇建議</li>
+</ol>
+<p>例如：</p>
+<blockquote>
+<p>ChatGPT、Gemini 與 Claude 的學習應用比較</p>
+</blockquote>
+<p>應先設定相同維度，例如資料整理、寫作、程式設計、文件分析與多媒體功能。</p>
+<h3>3. 發展演變型</h3>
+<p>適合歷史、科技、人物與制度演進。</p>
+<p>結構：</p>
+<ol>
+<li>起點</li>
+<li>重要階段</li>
+<li>關鍵轉折</li>
+<li>現況</li>
+<li>未來趨勢</li>
+</ol>
+<p>常用形式：</p>
+<ul>
+<li>水平時間軸</li>
+<li>垂直時間軸</li>
+<li>階段式道路</li>
+<li>螺旋發展圖</li>
+<li>世代比較圖</li>
+</ul>
+<h3>4. 探索發現型</h3>
+<p>適合研究報告、問卷分析與資料探索。</p>
+<p>結構：</p>
+<ol>
+<li>提出問題</li>
+<li>呈現資料</li>
+<li>發現規律</li>
+<li>找出異常</li>
+<li>提出解釋</li>
+<li>形成結論</li>
+</ol>
+<p>這種資訊圖表不應先設定結論，再尋找支持資料，而應讓結論由資料逐步形成。</p>
+<h3>5. 行動指引型</h3>
+<p>適合教學步驟、安全宣導與操作指南。</p>
+<p>結構：</p>
+<ol>
+<li>準備</li>
+<li>操作</li>
+<li>檢查</li>
+<li>常見錯誤</li>
+<li>完成標準</li>
+</ol>
+<p>例如：</p>
+<blockquote>
+<p>使用生成式 AI 查證資訊的五個步驟</p>
+</blockquote>
+<p>每個步驟可包含動作、圖示、提醒與實際範例。</p>
+</div>
+</section><section class="chapter" id="section-18" data-title="十八、資訊圖表中的資料層次">
+  <div class="chapter-head">
+    <div class="chapter-number">18</div>
+    <h2 id="chapter-18">十八、資訊圖表中的資料層次</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-18" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-18">
+<p>製作資訊圖表時，可將資料分為四個層次。</p>
+<h3>第一層：核心訊息</h3>
+<p>整張圖最重要的一句話。</p>
+<p>例如：</p>
+<blockquote>
+<p>過半數高中生每天睡眠不足七小時。</p>
+</blockquote>
+<p>核心訊息通常應放在：</p>
+<ul>
+<li>主標題附近</li>
+<li>版面中央</li>
+<li>第一個數字卡</li>
+<li>最大型圖表旁</li>
+</ul>
+<h3>第二層：主要證據</h3>
+<p>用來支持核心訊息的資料，包括：</p>
+<ul>
+<li>關鍵比例</li>
+<li>排名</li>
+<li>趨勢</li>
+<li>比較結果</li>
+<li>主要原因</li>
+</ul>
+<p>這些內容通常占據版面最多空間。</p>
+<h3>第三層：解釋資訊</h3>
+<p>用來說明數據的背景與意義，例如：</p>
+<ul>
+<li>名詞定義</li>
+<li>研究範圍</li>
+<li>原因分析</li>
+<li>情境說明</li>
+<li>補充案例</li>
+</ul>
+<h3>第四層：附註資訊</h3>
+<p>包括：</p>
+<ul>
+<li>資料來源</li>
+<li>製作者</li>
+<li>更新日期</li>
+<li>統計方法</li>
+<li>樣本限制</li>
+<li>延伸閱讀</li>
+</ul>
+<p>附註資訊可以較小，但仍須保持可閱讀性。</p>
+</div>
+</section><section class="chapter" id="section-19" data-title="十九、卡片式資訊設計技巧">
+  <div class="chapter-head">
+    <div class="chapter-number">19</div>
+    <h2 id="chapter-19">十九、卡片式資訊設計技巧</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-19" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-19">
+<p>卡片式設計適合將複雜內容拆分為數個可獨立閱讀的模組。</p>
+<p>每張卡片可以包含：</p>
+<ul>
+<li>小標題</li>
+<li>圖示</li>
+<li>核心數據</li>
+<li>一至三句說明</li>
+<li>狀態或分類標籤</li>
+</ul>
+<h3>卡片設計原則</h3>
+<h4>一張卡片只說一件事</h4>
+<p>不要在一張卡片中同時放入定義、歷史、統計、案例與建議。</p>
+<h4>卡片結構必須一致</h4>
+<p>例如每張卡片都採用：</p>
+<blockquote>
+<p>圖示 → 標題 → 數字 → 說明</p>
+</blockquote>
+<p>一致的結構可以降低讀者重新理解版面的負擔。</p>
+<h4>卡片間要有明確區別</h4>
+<p>可以利用：</p>
+<ul>
+<li>間距</li>
+<li>淺色背景</li>
+<li>邊框</li>
+<li>圓角</li>
+<li>標題</li>
+<li>分類色彩</li>
+</ul>
+<p>但不必每張卡片都使用不同顏色。</p>
+</div>
+</section><section class="chapter" id="section-20" data-title="二十、圖像與文字的搭配模式">
+  <div class="chapter-head">
+    <div class="chapter-number">20</div>
+    <h2 id="chapter-20">二十、圖像與文字的搭配模式</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-20" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-20">
+<h3>1. 圖像主導型</h3>
+<p>大型圖像占主要位置，文字只負責補充。</p>
+<p>適合：</p>
+<ul>
+<li>生物構造</li>
+<li>機械原理</li>
+<li>地理位置</li>
+<li>空間配置</li>
+<li>人體器官</li>
+</ul>
+<h3>2. 數據主導型</h3>
+<p>大型數字或圖表是視覺焦點。</p>
+<p>適合：</p>
+<ul>
+<li>問卷結果</li>
+<li>統計摘要</li>
+<li>年度成果</li>
+<li>閱讀排行榜</li>
+<li>學習成效</li>
+</ul>
+<h3>3. 文字主導型</h3>
+<p>內容以定義、觀念與步驟為主，圖示負責分段與提示。</p>
+<p>適合：</p>
+<ul>
+<li>學習重點</li>
+<li>操作指南</li>
+<li>檢查清單</li>
+<li>核心概念</li>
+<li>行動建議</li>
+</ul>
+<h3>4. 情境主導型</h3>
+<p>以人物、場景或故事帶領閱讀。</p>
+<p>適合：</p>
+<ul>
+<li>數位公民</li>
+<li>媒體識讀</li>
+<li>公共安全</li>
+<li>校園生活</li>
+<li>生涯探索</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-21" data-title="二十一、響應式資訊圖表設計">
+  <div class="chapter-head">
+    <div class="chapter-number">21</div>
+    <h2 id="chapter-21">二十一、響應式資訊圖表設計</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-21" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-21">
+<p>資訊圖表若要在手機、平板與電腦呈現，就不能只設計固定尺寸的海報。</p>
+<h3>1. 桌機版</h3>
+<p>適合：</p>
+<ul>
+<li>多欄排列</li>
+<li>左右比較</li>
+<li>大型圖表</li>
+<li>多模組儀表板</li>
+<li>橫向時間軸</li>
+</ul>
+<h3>2. 平板版</h3>
+<p>適合：</p>
+<ul>
+<li>雙欄結構</li>
+<li>模組式卡片</li>
+<li>直向或橫向切換</li>
+<li>較大的互動按鈕</li>
+</ul>
+<h3>3. 手機版</h3>
+<p>建議：</p>
+<ul>
+<li>改成單欄排列</li>
+<li>依閱讀順序上下堆疊</li>
+<li>避免過寬表格</li>
+<li>減少過小圖例</li>
+<li>將橫向時間軸改為垂直時間軸</li>
+<li>將比較表改成比較卡片</li>
+<li>重要按鈕高度至少容易觸控</li>
+</ul>
+<p>手機版不是把桌機版等比例縮小，而是重新安排資訊順序。</p>
+</div>
+</section><section class="chapter" id="section-22" data-title="二十二、互動式資訊圖表設計">
+  <div class="chapter-head">
+    <div class="chapter-number">22</div>
+    <h2 id="chapter-22">二十二、互動式資訊圖表設計</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-22" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-22">
+<p>數位資訊圖表可以加入互動功能，讓讀者主動探索。</p>
+<h3>常見互動方式</h3>
+<h4>滑鼠移入提示</h4>
+<p>讀者將滑鼠移到圖表上時，顯示：</p>
+<ul>
+<li>詳細數值</li>
+<li>年份</li>
+<li>類別</li>
+<li>補充說明</li>
+</ul>
+<h4>篩選功能</h4>
+<p>依照條件篩選資料，例如：</p>
+<ul>
+<li>年級</li>
+<li>班級</li>
+<li>性別</li>
+<li>年度</li>
+<li>類別</li>
+<li>地區</li>
+</ul>
+<h4>排序功能</h4>
+<p>可依照：</p>
+<ul>
+<li>數值高低</li>
+<li>時間順序</li>
+<li>字母順序</li>
+<li>熱門程度</li>
+</ul>
+<p>重新排列內容。</p>
+<h4>點擊展開</h4>
+<p>初始只顯示重點，點擊後查看：</p>
+<ul>
+<li>詳細說明</li>
+<li>案例</li>
+<li>資料來源</li>
+<li>延伸知識</li>
+</ul>
+<h4>動態切換</h4>
+<p>讀者可以切換：</p>
+<ul>
+<li>不同年份</li>
+<li>不同資料集</li>
+<li>百分比與實際人數</li>
+<li>圖表模式</li>
+<li>淺色與深色模式</li>
+</ul>
+<h4>滾動敘事</h4>
+<p>隨著讀者往下滑動，逐步呈現圖表、標註與故事內容。</p>
+<p>適合：</p>
+<ul>
+<li>歷史事件</li>
+<li>調查報告</li>
+<li>科學過程</li>
+<li>社會議題</li>
+<li>專題研究</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-23" data-title="二十三、動畫的使用原則">
+  <div class="chapter-head">
+    <div class="chapter-number">23</div>
+    <h2 id="chapter-23">二十三、動畫的使用原則</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-23" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-23">
+<p>動畫可以引導注意力，但過多動畫會造成干擾。</p>
+<h3>適合使用動畫的情況</h3>
+<ul>
+<li>顯示流程方向</li>
+<li>呈現數據變化</li>
+<li>強調重要結果</li>
+<li>說明物件移動</li>
+<li>展示步驟先後</li>
+<li>提供操作回饋</li>
+</ul>
+<h3>不適合使用動畫的情況</h3>
+<ul>
+<li>所有圖示持續跳動</li>
+<li>背景不斷閃爍</li>
+<li>標題反覆旋轉</li>
+<li>圖表數字不停變化</li>
+<li>裝飾物件遮住內容</li>
+</ul>
+<h3>動畫設計原則</h3>
+<ul>
+<li>動畫時間要短。</li>
+<li>同時動作的元素不宜過多。</li>
+<li>動畫結束後資訊應保持可閱讀。</li>
+<li>重要內容不能只在動畫期間出現。</li>
+<li>提供減少動畫或關閉動畫的選項。</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-24" data-title="二十四、AI 輔助資訊圖表製作流程">
+  <div class="chapter-head">
+    <div class="chapter-number">24</div>
+    <h2 id="chapter-24">二十四、AI 輔助資訊圖表製作流程</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-24" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-24">
+<p>生成式 AI 可以協助內容整理、版面規劃與視覺提案，但不能取代資料查證。</p>
+<h3>AI 可以協助的工作</h3>
+<h4>1. 摘要文字</h4>
+<p>將長篇文章整理為：</p>
+<ul>
+<li>核心概念</li>
+<li>三至五個重點</li>
+<li>關鍵數據</li>
+<li>結論</li>
+<li>行動建議</li>
+</ul>
+<h4>2. 分析資訊關係</h4>
+<p>辨識內容屬於：</p>
+<ul>
+<li>比較</li>
+<li>流程</li>
+<li>時間</li>
+<li>因果</li>
+<li>階層</li>
+<li>分類</li>
+<li>地理分布</li>
+</ul>
+<h4>3. 建議圖表形式</h4>
+<p>根據資料特性建議：</p>
+<ul>
+<li>長條圖</li>
+<li>折線圖</li>
+<li>時間軸</li>
+<li>流程圖</li>
+<li>比較矩陣</li>
+<li>地圖</li>
+<li>階層圖</li>
+</ul>
+<h4>4. 產生版面草圖</h4>
+<p>請 AI 提出：</p>
+<ul>
+<li>內容區塊</li>
+<li>閱讀動線</li>
+<li>主視覺</li>
+<li>色彩規劃</li>
+<li>字體層級</li>
+<li>圖示建議</li>
+</ul>
+<h4>5. 優化文案</h4>
+<p>將內容改成：</p>
+<ul>
+<li>短標題</li>
+<li>數字標語</li>
+<li>圖表註解</li>
+<li>卡片說明</li>
+<li>行動呼籲</li>
+</ul>
+<h3>AI 不應直接決定的工作</h3>
+<ul>
+<li>資料是否真實</li>
+<li>引用來源是否可靠</li>
+<li>數據單位是否正確</li>
+<li>統計方法是否合理</li>
+<li>圖表是否誤導</li>
+<li>是否涉及偏見</li>
+<li>是否侵犯著作權或隱私</li>
+</ul>
+<p>AI 產生的內容仍需人工檢查。</p>
+</div>
+</section><section class="chapter" id="section-25" data-title="二十五、資訊圖表 AI 提示詞範本">
+  <div class="chapter-head">
+    <div class="chapter-number">25</div>
+    <h2 id="chapter-25">二十五、資訊圖表 AI 提示詞範本</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-25" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-25">
+<h3>1. 內容整理提示詞</h3>
+<blockquote>
+<p>請將以下資料整理為一張適合高中生閱讀的資訊圖表內容。先提出一句核心訊息，再整理五個重點。每個重點包含短標題、40 字以內說明及適合搭配的圖示。保留重要數據、年份、單位與資料來源，不得自行編造資料。</p>
+</blockquote>
+<h3>2. 版面設計提示詞</h3>
+<blockquote>
+<p>請為「〔請填寫〕」規劃一張 3:2 橫式資訊圖表。受眾為高中生，使用繁體中文。請設計清楚的閱讀動線，包含主標題、核心數據、三個內容區塊、結論及資料來源。視覺風格明亮、現代、簡潔，避免文字過多，並說明各區塊的位置與視覺層級。</p>
+</blockquote>
+<h3>3. 圖表選擇提示詞</h3>
+<blockquote>
+<p>請分析以下資料適合使用哪一種圖表。請先指出資料要回答的問題，再從長條圖、折線圖、圓餅圖、散佈圖、時間軸、流程圖、地圖或比較表中選擇最合適的形式，並解釋理由。同時指出可能造成誤導的呈現方式。</p>
+</blockquote>
+<h3>4. 視覺風格提示詞</h3>
+<blockquote>
+<p>請為「〔請填寫〕」提出三種資訊圖表視覺風格方案。每個方案包含色彩配置、字型建議、圖示風格、版面結構、適用情境及可能風險。文字使用繁體中文，設計須兼顧高中生閱讀與無障礙需求。</p>
+</blockquote>
+<h3>5. 完整圖像生成提示詞</h3>
+<blockquote>
+<p>製作一張以「〔請填寫〕」為主題的資訊圖表。使用繁體中文，版面比例為 3:2。整體採現代、明亮、清晰的教育視覺風格。上方放置主標題與一句核心訊息，中間以三個模組呈現重點內容，每個模組搭配一致風格的圖示、短標題與簡短說明，下方放置結論、行動建議及資料來源。保持充足留白、明確對齊與清楚視覺層級，避免過多裝飾、過小文字與不必要的立體效果。</p>
+</blockquote>
+<p>使用圖像生成工具時，建議先請 AI 產生「版面草圖」，再自行加入正確文字。因為圖像生成工具仍可能出現錯字、亂碼、數據錯誤或排版不穩定。</p>
+</div>
+</section><section class="chapter" id="section-26" data-title="二十六、資訊圖表製作工具">
+  <div class="chapter-head">
+    <div class="chapter-number">26</div>
+    <h2 id="chapter-26">二十六、資訊圖表製作工具</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-26" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-26">
+<h3>1. Canva</h3>
+<p>適合：</p>
+<ul>
+<li>初學者</li>
+<li>海報</li>
+<li>社群圖卡</li>
+<li>教學資訊圖表</li>
+<li>快速套用模板</li>
+</ul>
+<p>優點：</p>
+<ul>
+<li>模板豐富</li>
+<li>操作簡單</li>
+<li>圖示素材多</li>
+<li>支援共同編輯</li>
+</ul>
+<p>注意事項：</p>
+<ul>
+<li>不要完全照搬模板。</li>
+<li>應調整色彩、字體與資訊層級。</li>
+<li>避免為了填滿模板而加入無關內容。</li>
+</ul>
+<h3>2. Figma</h3>
+<p>適合：</p>
+<ul>
+<li>精細版面設計</li>
+<li>團隊協作</li>
+<li>網頁介面</li>
+<li>設計系統</li>
+<li>響應式資訊圖表</li>
+</ul>
+<p>優點：</p>
+<ul>
+<li>網格與對齊功能完整</li>
+<li>元件可重複使用</li>
+<li>適合建立設計規範</li>
+<li>方便製作互動原型</li>
+</ul>
+<h3>3. Adobe Express</h3>
+<p>適合：</p>
+<ul>
+<li>社群貼文</li>
+<li>宣傳海報</li>
+<li>快速排版</li>
+<li>教育圖卡</li>
+<li>多尺寸輸出</li>
+</ul>
+<h3>4. PowerPoint</h3>
+<p>適合：</p>
+<ul>
+<li>教學現場</li>
+<li>簡報型資訊圖表</li>
+<li>快速製作圖表</li>
+<li>動畫展示</li>
+<li>匯出圖片或 PDF</li>
+</ul>
+<p>PowerPoint 具備圖形、圖示、SmartArt、圖表與對齊工具，是很實用的入門工具。</p>
+<h3>5. Excel 與 Google 試算表</h3>
+<p>適合：</p>
+<ul>
+<li>整理資料</li>
+<li>統計計算</li>
+<li>製作基礎圖表</li>
+<li>篩選與排序</li>
+<li>建立儀表板</li>
+</ul>
+<p>建議先在試算表完成資料清理與計算，再匯入視覺設計工具排版。</p>
+<h3>6. Flourish</h3>
+<p>適合：</p>
+<ul>
+<li>互動式圖表</li>
+<li>動態排名</li>
+<li>地圖</li>
+<li>故事式資料視覺化</li>
+<li>網頁嵌入</li>
+</ul>
+<h3>7. Datawrapper</h3>
+<p>適合：</p>
+<ul>
+<li>新聞圖表</li>
+<li>長條圖</li>
+<li>折線圖</li>
+<li>地圖</li>
+<li>表格視覺化</li>
+</ul>
+<p>特色是圖表簡潔、資料標示清楚，適合重視資訊準確性的作品。</p>
+<h3>8. Piktochart 與 Visme</h3>
+<p>適合：</p>
+<ul>
+<li>資訊圖表</li>
+<li>報告</li>
+<li>教學素材</li>
+<li>簡報</li>
+<li>視覺化文件</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-27" data-title="二十七、資訊圖表教學活動設計">
+  <div class="chapter-head">
+    <div class="chapter-number">27</div>
+    <h2 id="chapter-27">二十七、資訊圖表教學活動設計</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-27" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-27">
+<h3>活動一：一分鐘看懂一張圖</h3>
+<h4>目標</h4>
+<p>訓練學生快速辨識資訊圖表的核心訊息。</p>
+<h4>操作方式</h4>
+<ol>
+<li>教師展示一張資訊圖表。</li>
+<li>學生閱讀一分鐘。</li>
+<li>關閉畫面。</li>
+<li>請學生回答：<ul>
+<li>主題是什麼？</li>
+<li>最重要的數據是什麼？</li>
+<li>結論是什麼？</li>
+<li>哪個視覺元素最有幫助？</li>
+</ul>
+</li>
+</ol>
+<h4>學習重點</h4>
+<p>若大多數學生無法說出核心訊息，代表資訊圖表的視覺層級可能不夠清楚。</p>
+<h3>活動二：文字轉圖像</h3>
+<h4>目標</h4>
+<p>練習將長篇內容轉化為視覺結構。</p>
+<h4>操作方式</h4>
+<p>提供一篇約 500 字文章，要求學生整理成：</p>
+<ul>
+<li>一句核心訊息</li>
+<li>三個重點</li>
+<li>一個圖表</li>
+<li>一個流程圖</li>
+<li>一項行動建議</li>
+</ul>
+<h4>限制</h4>
+<ul>
+<li>全圖不超過 200 字。</li>
+<li>顏色不超過四種。</li>
+<li>字型不超過兩套。</li>
+<li>每個區塊只呈現一個概念。</li>
+</ul>
+<h3>活動三：找出誤導圖表</h3>
+<h4>目標</h4>
+<p>培養資料判讀與媒體識讀能力。</p>
+<h4>可設計的問題</h4>
+<ul>
+<li>座標軸是否從零開始？</li>
+<li>圖形比例是否正確？</li>
+<li>樣本數是否足夠？</li>
+<li>是否隱藏部分年份？</li>
+<li>圖表標題是否帶有偏見？</li>
+<li>是否混用百分比與實際人數？</li>
+<li>是否把相關說成因果？</li>
+</ul>
+<h3>活動四：同一資料，多種設計</h3>
+<h4>目標</h4>
+<p>理解不同視覺形式會影響讀者解讀。</p>
+<h4>操作方式</h4>
+<p>提供同一組資料，讓學生分別製作：</p>
+<ul>
+<li>長條圖</li>
+<li>圓餅圖</li>
+<li>圖示統計</li>
+<li>數字卡</li>
+<li>比較表</li>
+</ul>
+<p>再討論：</p>
+<ul>
+<li>哪一種最容易比較？</li>
+<li>哪一種最有吸引力？</li>
+<li>哪一種最可能誤導？</li>
+<li>哪一種適合手機閱讀？</li>
+</ul>
+<h3>活動五：資訊圖表改造</h3>
+<h4>目標</h4>
+<p>練習批判性檢視與設計改善。</p>
+<h4>操作方式</h4>
+<p>教師提供一張具有以下問題的資訊圖表：</p>
+<ul>
+<li>文字過多</li>
+<li>字體太小</li>
+<li>顏色混亂</li>
+<li>缺乏對齊</li>
+<li>圖表錯誤</li>
+<li>沒有資料來源</li>
+</ul>
+<p>學生先進行問題診斷，再重新設計。</p>
+</div>
+</section><section class="chapter" id="section-28" data-title="二十八、學生資訊圖表製作任務範例">
+  <div class="chapter-head">
+    <div class="chapter-number">28</div>
+    <h2 id="chapter-28">二十八、學生資訊圖表製作任務範例</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-28" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-28">
+<h3>任務主題</h3>
+<p>可選擇：</p>
+<ul>
+<li>高中生閱讀習慣</li>
+<li>校園手機使用情形</li>
+<li>睡眠與學習表現</li>
+<li>圖書館借閱趨勢</li>
+<li>生成式 AI 使用風險</li>
+<li>SDGs 校園行動</li>
+<li>網路假訊息辨識</li>
+<li>個人自主學習成果</li>
+<li>校園能源使用</li>
+<li>學生通勤方式</li>
+</ul>
+<h3>任務成果</h3>
+<p>學生需完成：</p>
+<ol>
+<li>一張資訊圖表</li>
+<li>一份原始資料表</li>
+<li>一份資料來源清單</li>
+<li>一份設計說明</li>
+<li>一段學習反思</li>
+</ol>
+<h3>設計說明內容</h3>
+<ul>
+<li>為何選擇此主題？</li>
+<li>核心訊息是什麼？</li>
+<li>使用哪些資料？</li>
+<li>為何選擇這種圖表？</li>
+<li>色彩與圖示有何意義？</li>
+<li>如何避免圖表誤導？</li>
+<li>製作過程遇到哪些問題？</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-29" data-title="二十九、資訊圖表評量規準">
+  <div class="chapter-head">
+    <div class="chapter-number">29</div>
+    <h2 id="chapter-29">二十九、資訊圖表評量規準</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-29" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-29">
+<p>建議採用五個面向，每個面向四個等級。</p>
+<table>
+<thead>
+<tr>
+<th>評量面向</th>
+<th>4 優良</th>
+<th>3 良好</th>
+<th>2 待改進</th>
+<th>1 不足</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>內容正確性</td>
+<td>資料完整正確，來源可靠，單位清楚</td>
+<td>內容大致正確，少量資訊不完整</td>
+<td>有部分錯誤或來源不明</td>
+<td>多項錯誤或缺乏資料依據</td>
+</tr>
+<tr>
+<td>資訊結構</td>
+<td>核心訊息明確，層級與動線清楚</td>
+<td>結構大致清楚，部分區塊略顯混亂</td>
+<td>重點不突出，閱讀順序不明</td>
+<td>缺乏組織，難以理解</td>
+</tr>
+<tr>
+<td>圖表選擇</td>
+<td>圖表形式適切，能有效支持結論</td>
+<td>圖表基本適合，但仍可優化</td>
+<td>圖表與資料關係不夠清楚</td>
+<td>圖表錯誤或造成誤導</td>
+</tr>
+<tr>
+<td>視覺設計</td>
+<td>色彩、字型、圖示與版面高度一致</td>
+<td>整體協調，少部分元素不一致</td>
+<td>色彩或版面稍顯混亂</td>
+<td>嚴重影響閱讀</td>
+</tr>
+<tr>
+<td>溝通效果</td>
+<td>能快速理解並留下清楚印象</td>
+<td>大致能掌握主要內容</td>
+<td>需要花較多時間理解</td>
+<td>無法判斷核心訊息</td>
+</tr>
+<tr>
+<td>資料倫理</td>
+<td>完整標示來源、樣本與限制</td>
+<td>大致標示，少量資訊缺漏</td>
+<td>來源或方法交代不足</td>
+<td>未標示來源或有誤導情形</td>
+</tr>
+<tr>
+<td>創意與應用</td>
+<td>視覺形式具有創意且符合主題</td>
+<td>有適度創意</td>
+<td>形式較普通或套用模板明顯</td>
+<td>設計與主題不符</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section><section class="chapter" id="section-30" data-title="三十、自我檢核量表">
+  <div class="chapter-head">
+    <div class="chapter-number">30</div>
+    <h2 id="chapter-30">三十、自我檢核量表</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-30" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-30">
+<p>作品完成後，可以請學生以一至五分進行自我檢核。</p>
+<ol>
+<li>我能用一句話說明作品的核心訊息。</li>
+<li>我的資料來源可以查證。</li>
+<li>我的圖表形式符合資料特性。</li>
+<li>我的圖表沒有誇大或隱藏差異。</li>
+<li>我的閱讀順序清楚。</li>
+<li>我的文字足夠精簡。</li>
+<li>我的字體大小容易閱讀。</li>
+<li>我的顏色具有一致意義。</li>
+<li>我的圖示風格一致。</li>
+<li>我的作品有清楚的結論。</li>
+<li>我的作品在手機上仍可閱讀。</li>
+<li>我的作品有標示資料來源與日期。</li>
+</ol>
+<p>總分較低的項目，就是下一次修改的重點。</p>
+</div>
+</section><section class="chapter" id="section-31" data-title="三十一、常見版面範本">
+  <div class="chapter-head">
+    <div class="chapter-number">31</div>
+    <h2 id="chapter-31">三十一、常見版面範本</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-31" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-31">
+<h3>1. 由上而下型</h3>
+<p>適合：</p>
+<ul>
+<li>教學內容</li>
+<li>操作流程</li>
+<li>社會議題</li>
+<li>手機長圖</li>
+</ul>
+<p>結構：</p>
+<ol>
+<li>主標題</li>
+<li>問題背景</li>
+<li>核心數據</li>
+<li>原因</li>
+<li>影響</li>
+<li>建議</li>
+<li>資料來源</li>
+</ol>
+<h3>2. 中央核心型</h3>
+<p>適合：</p>
+<ul>
+<li>核心概念</li>
+<li>主題分類</li>
+<li>系統關係</li>
+<li>心智圖</li>
+</ul>
+<p>結構：</p>
+<ul>
+<li>中央放置主題。</li>
+<li>四周放置分類或相關因素。</li>
+<li>使用線條表示關係。</li>
+</ul>
+<h3>3. 左右比較型</h3>
+<p>適合：</p>
+<ul>
+<li>前後比較</li>
+<li>優缺點</li>
+<li>兩種方案</li>
+<li>觀點對照</li>
+</ul>
+<p>結構：</p>
+<ul>
+<li>中央放置比較標準。</li>
+<li>左右維持相同版面結構。</li>
+<li>使用一致比例與尺度。</li>
+</ul>
+<h3>4. 儀表板型</h3>
+<p>適合：</p>
+<ul>
+<li>統計摘要</li>
+<li>學習成果</li>
+<li>年度報告</li>
+<li>館藏分析</li>
+</ul>
+<p>結構：</p>
+<ol>
+<li>上方關鍵數字卡</li>
+<li>中間主要圖表</li>
+<li>下方分類分析</li>
+<li>最後呈現結論</li>
+</ol>
+<h3>5. 時間軸型</h3>
+<p>適合：</p>
+<ul>
+<li>歷史</li>
+<li>人物</li>
+<li>科技</li>
+<li>專案進度</li>
+</ul>
+<p>設計重點：</p>
+<ul>
+<li>時間間隔要合理。</li>
+<li>重要事件應有視覺差異。</li>
+<li>不必每一年都放入事件。</li>
+<li>避免線條過度曲折。</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-32" data-title="三十二、資訊圖表案例分析架構">
+  <div class="chapter-head">
+    <div class="chapter-number">32</div>
+    <h2 id="chapter-32">三十二、資訊圖表案例分析架構</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-32" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-32">
+<p>分析一張資訊圖表時，可以從以下六個層面進行。</p>
+<h3>1. 目的</h3>
+<ul>
+<li>這張圖要傳達的核心訊息是什麼？</li>
+<li>希望讀者知道、相信或採取什麼行動？</li>
+</ul>
+<h3>2. 受眾</h3>
+<ul>
+<li>是給專家、一般大眾、學生還是兒童？</li>
+<li>字體、用語與內容深度是否適合？</li>
+</ul>
+<h3>3. 資料</h3>
+<ul>
+<li>資料是否正確？</li>
+<li>是否有來源？</li>
+<li>是否標示年份、單位與樣本？</li>
+</ul>
+<h3>4. 結構</h3>
+<ul>
+<li>閱讀順序是否明確？</li>
+<li>資訊是否分組？</li>
+<li>核心訊息是否突出？</li>
+</ul>
+<h3>5. 視覺</h3>
+<ul>
+<li>色彩是否一致？</li>
+<li>圖表是否合適？</li>
+<li>圖示是否有意義？</li>
+<li>版面空間是否充足？</li>
+</ul>
+<h3>6. 影響</h3>
+<ul>
+<li>哪些地方容易理解？</li>
+<li>哪些地方可能誤導？</li>
+<li>看完後是否能記住重點？</li>
+<li>是否願意採取行動？</li>
+</ul>
+</div>
+</section><section class="chapter" id="section-33" data-title="三十三、資訊圖表設計的進階原則">
+  <div class="chapter-head">
+    <div class="chapter-number">33</div>
+    <h2 id="chapter-33">三十三、資訊圖表設計的進階原則</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-33" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-33">
+<h3>原則一：一張圖只處理一個主要問題</h3>
+<p>主題可以廣，但核心問題必須集中。</p>
+<p>例如「人工智慧」太大，可以縮小為：</p>
+<ul>
+<li>高中生使用 AI 的主要用途</li>
+<li>AI 生成內容的查證流程</li>
+<li>AI 對學習的三項影響</li>
+<li>使用 AI 時的隱私風險</li>
+</ul>
+<h3>原則二：讓標題直接傳達結論</h3>
+<p>不要只寫「調查結果」，而應寫：</p>
+<blockquote>
+<p>超過六成學生每天使用生成式 AI 協助學習</p>
+</blockquote>
+<p>讓讀者即使沒有仔細閱讀圖表，也能掌握主要發現。</p>
+<h3>原則三：先排序，再視覺化</h3>
+<p>長條圖若按照數值高低排列，通常比隨機排列更容易比較。</p>
+<p>但時間資料應依照時間順序，不宜任意按數值排序。</p>
+<h3>原則四：圖表旁直接標示</h3>
+<p>比起讓讀者反覆查看圖例，直接在圖表旁標示類別與數值通常更有效率。</p>
+<h3>原則五：提供比較基準</h3>
+<p>單獨呈現「平均每天閱讀 18 分鐘」可能缺乏意義。</p>
+<p>可以增加：</p>
+<ul>
+<li>與前一年比較</li>
+<li>與其他年級比較</li>
+<li>與建議值比較</li>
+<li>與全校平均比較</li>
+</ul>
+<h3>原則六：把結論放在圖表附近</h3>
+<p>不要讓讀者自行猜測圖表的意義。</p>
+<p>可在圖表旁加入：</p>
+<blockquote>
+<p>高一學生的借閱量明顯高於高三，可能與高三升學壓力增加有關。</p>
+</blockquote>
+<p>若屬於推論，應明確標示「可能」或「推測」。</p>
+</div>
+</section><section class="chapter" id="section-34" data-title="三十四、資訊圖表設計的三個層次">
+  <div class="chapter-head">
+    <div class="chapter-number">34</div>
+    <h2 id="chapter-34">三十四、資訊圖表設計的三個層次</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-34" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-34">
+<h3>第一層：看得到</h3>
+<p>基本要求：</p>
+<ul>
+<li>字體清楚</li>
+<li>顏色可辨識</li>
+<li>圖表不模糊</li>
+<li>版面不擁擠</li>
+</ul>
+<h3>第二層：看得懂</h3>
+<p>進一步要求：</p>
+<ul>
+<li>分類清楚</li>
+<li>閱讀順序明確</li>
+<li>圖表選擇適當</li>
+<li>重點突出</li>
+</ul>
+<h3>第三層：記得住</h3>
+<p>更高層次要求：</p>
+<ul>
+<li>有鮮明核心訊息</li>
+<li>有視覺比喻</li>
+<li>有故事結構</li>
+<li>有關鍵數字</li>
+<li>有明確結論與行動</li>
+</ul>
+<p>真正優秀的資訊圖表，應同時做到：</p>
+<blockquote>
+<p>看得到、看得懂、記得住、能行動。</p>
+</blockquote>
+</div>
+</section><section class="chapter" id="section-35" data-title="三十五、資訊圖表的最終設計公式">
+  <div class="chapter-head">
+    <div class="chapter-number">35</div>
+    <h2 id="chapter-35">三十五、資訊圖表的最終設計公式</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-35" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-35">
+<p>可以將完整製作流程整理為：</p>
+<blockquote>
+<p>問題定義 → 資料蒐集 → 資料查證 → 資訊分類 → 核心訊息 → 視覺編碼 → 版面配置 → 視覺一致 → 測試修正 → 發布與引用</p>
+</blockquote>
+<p>也可以簡化為五個步驟：</p>
+<h3>1. 找重點</h3>
+<p>先決定最重要的訊息。</p>
+<h3>2. 找關係</h3>
+<p>判斷資料屬於比較、流程、時間、因果、階層或分布。</p>
+<h3>3. 找形式</h3>
+<p>選擇圖表、流程圖、時間軸、地圖或圖解。</p>
+<h3>4. 建立規則</h3>
+<p>統一色彩、字體、圖示、間距與標示方式。</p>
+<h3>5. 驗證效果</h3>
+<p>確認作品正確、清楚、易讀且沒有誤導。</p>
+</div>
+</section><section class="chapter" id="section-36" data-title="三十六、結語">
+  <div class="chapter-head">
+    <div class="chapter-number">36</div>
+    <h2 id="chapter-36">三十六、結語</h2>
+    <button class="collapse-btn" type="button" aria-expanded="true" aria-controls="body-36" title="收合章節">−</button>
+  </div>
+  <div class="chapter-body" id="body-36">
+<p>資訊圖表的價值，不在於使用多少圖片、顏色或特效，而在於能否幫助讀者快速掌握資訊的結構與意義。</p>
+<p>一張好的資訊圖表，應具有以下特徵：</p>
+<ul>
+<li>有明確的核心問題。</li>
+<li>有可信的資料來源。</li>
+<li>有適合的圖表形式。</li>
+<li>有清楚的資訊層級。</li>
+<li>有一致的視覺語言。</li>
+<li>有容易理解的閱讀動線。</li>
+<li>有誠實而不誤導的數據呈現。</li>
+<li>有具體的結論或行動建議。</li>
+<li>能在不同裝置與閱讀情境中保持清楚。</li>
+</ul>
+<p>最重要的設計原則仍然是：</p>
+<blockquote>
+<p>資訊優先、視覺輔助、資料誠實、讀者中心。</p>
+</blockquote>
+<p>視覺化設計不是把內容變得華麗，而是把複雜的資訊整理成讀者能夠理解、記憶與運用的知識。</p>
+</div>
+</section></div>
+    <div class="empty-state" id="emptyState">找不到符合的內容，請更換搜尋關鍵字。</div>
+  </main>
+</div>
+<button class="fab" id="backTop" type="button" title="回到頁首">↑</button>
+<footer>資訊優先・視覺輔助・資料誠實・讀者中心</footer>
 <script>
-const chapters=["什麼是資訊圖表？","核心理論","常見類型","實作技巧","設計流程","常見錯誤","教學設計原則","完成檢核表","核心公式","進階理論","構圖方法","版面與媒介","圖表技巧","圖示系統","文字寫作","色彩系統","無障礙設計","互動設計","資料故事","AI 輔助設計","品質評量","學生實作活動","範例架構","最終原則"];
-const nav=document.querySelector('#navList'); chapters.forEach((x,i)=>{const b=document.createElement('button');b.className='navbtn';b.innerHTML=`<small>${String(i+1).padStart(2,'0')}</small>${x}`;b.onclick=()=>{document.querySelector('#ch'+(i+1)).scrollIntoView();tone(420+i*8,.05)};nav.appendChild(b)});
-let sound=true,audioCtx;function tone(f=520,d=.08){if(!sound)return;try{audioCtx??=new(window.AudioContext||window.webkitAudioContext)();const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=f;g.gain.setValueAtTime(.035,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+d);o.connect(g).connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+d)}catch(e){}}
-const soundBtn=document.querySelector('#soundBtn');soundBtn.onclick=()=>{sound=!sound;soundBtn.setAttribute('aria-pressed',sound);soundBtn.innerHTML=sound?'🔊 <span class="txt">音效開啟</span>':'🔇 <span class="txt">音效關閉</span>';if(sound)tone(620,.1)};
-const sections=[...document.querySelectorAll('.section')],navBtns=[...document.querySelectorAll('.navbtn')];function updateProgress(){const max=document.documentElement.scrollHeight-innerHeight,p=max?Math.round(scrollY/max*100):0;document.querySelector('#progressBar').style.width=p+'%';document.querySelector('#progressText').textContent=p+'%';localStorage.setItem('info-scroll',p)}addEventListener('scroll',updateProgress,{passive:true});updateProgress();
-const observer=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const i=sections.indexOf(e.target);navBtns.forEach((b,j)=>b.classList.toggle('active',i===j))}}),{rootMargin:'-20% 0px -65%'});sections.forEach(s=>observer.observe(s));
-document.querySelector('#randomBtn').onclick=()=>{const n=Math.floor(Math.random()*24)+1;document.querySelector('#ch'+n).scrollIntoView();show(`隨機挑戰：第 ${n} 章`);tone(720,.12)};document.querySelector('#topBtn').onclick=()=>{scrollTo({top:0,behavior:'smooth'});tone()};
-function show(t){const x=document.querySelector('#toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),1800)}
-document.querySelectorAll('.quiz-option').forEach(b=>b.onclick=()=>{const wrap=b.parentElement,fb=wrap.querySelector('.feedback');wrap.querySelectorAll('.quiz-option').forEach(x=>{x.disabled=true;if(x.dataset.answer)x.classList.add('correct')});if(b.dataset.answer){fb.textContent='答對了！你抓到設計的核心。';tone(760,.16)}else{b.classList.add('wrong');fb.textContent='再看一次：綠色選項是較適合的答案。';tone(220,.16)}});
-document.querySelectorAll('.demo-bar').forEach(b=>b.onclick=()=>{const ok=b.hasAttribute('data-max');document.querySelector('#chartFeedback').textContent=ok?'✓ 正確！D 類 92 是最大值。':'這根不是最大值，再比較一次。';tone(ok?760:220,.12)});
-const checks=[...document.querySelectorAll('#checklist input')];checks.forEach((c,i)=>{c.checked=localStorage.getItem('infocheck'+i)==='1';c.onchange=()=>{localStorage.setItem('infocheck'+i,c.checked?'1':'0');refreshChecks();tone(c.checked?620:300,.06)}});function refreshChecks(){const n=checks.filter(x=>x.checked).length;document.querySelector('#checkResult').innerHTML=`<strong>完成 ${n}／${checks.length} 項</strong> ${n===checks.length?'🎉 作品準備好了！':''}`}refreshChecks();
-const palettes={category:{html:'<i style="background:#ff9f2e">人文</i><i style="background:#4e9bf5;color:white">科學</i><i style="background:#8c62e8;color:white">藝術</i><i style="background:#36b77d">社會</i>',desc:'不同顏色代表不同類別，適合分類資料，但顏色不要過多。'},sequential:{html:'<i style="background:#dff6ff">低</i><i style="background:#80cde8">中低</i><i style="background:#2889bf;color:white">中高</i><i style="background:#164c7a;color:white">高</i>',desc:'同一色相由淺至深代表高低，適合地圖、熱圖與程度資料。'},diverging:{html:'<i style="background:#347dc1;color:white">低於平均</i><i style="background:#dce1e6">接近平均</i><i style="background:#e65353;color:white">高於平均</i>',desc:'以中間值為中心，兩端用不同色系，適合正負、支持反對、增減或高低於基準。'}};
-document.querySelectorAll('#paletteChoices .choice').forEach(b=>b.onclick=()=>{document.querySelectorAll('#paletteChoices .choice').forEach(x=>x.classList.toggle('selected',x===b));const p=palettes[b.dataset.palette];document.querySelector('#palette').innerHTML=p.html;document.querySelector('#paletteDesc').textContent=p.desc;tone()});
-const hours=document.querySelector('#hours');hours.oninput=()=>{document.querySelector('#hoursValue').textContent=hours.value;document.querySelector('#bookResult').textContent=Math.round(hours.value*52/9.5);tone(300+hours.value*25,.025)};
-document.querySelector('#promptBtn').onclick=()=>{const t=document.querySelector('#promptTopic').value,f=document.querySelector('#promptForm').value;document.querySelector('#promptOutput').textContent=`你是一位高中教育與資訊圖表設計專家。請為高中生設計一張「${t}」資訊圖表。使用${f}，內容須正確、結構清楚，採明亮現代風格與繁體中文，3:2 橫式版面。每個區塊包含簡短標題、說明與一致風格圖示，避免長文與過小字級，不以裝飾取代資訊，確保數據比例正確、來源清楚並兼顧無障礙閱讀。請輸出完整內容架構與視覺規格。`;tone(680,.12)};
+const chartAdvice = {"compare": "長條圖或比較表｜適合比較不同類別、排名與差異。", "trend": "折線圖｜適合呈現時間順序與變化趨勢。", "part": "圓餅圖、環形圖或百分比長條｜類別宜少且總和為 100%。", "relation": "散佈圖｜用來觀察兩個數值變項的關聯。", "process": "流程圖或時間軸｜呈現步驟、先後與決策。", "space": "地圖｜呈現地區分布、路線與空間差異。", "hierarchy": "樹狀圖、金字塔或同心圓｜呈現包含與層級關係。"};
+const q = document.getElementById('questionType');
+const advice = document.getElementById('chartAdvice');
+function updateAdvice(){ advice.textContent = chartAdvice[q.value]; }
+q.addEventListener('change',updateAdvice); updateAdvice();
+
+const root=document.documentElement;
+let fontSize=18;
+document.getElementById('fontUp').addEventListener('click',()=>{fontSize=Math.min(25,fontSize+1);root.style.setProperty('--base-size',fontSize+'px')});
+document.getElementById('fontDown').addEventListener('click',()=>{fontSize=Math.max(17,fontSize-1);root.style.setProperty('--base-size',fontSize+'px')});
+document.getElementById('themeToggle').addEventListener('click',()=>{
+  root.dataset.theme = root.dataset.theme==='dark' ? '' : 'dark';
+});
+document.getElementById('printBtn').addEventListener('click',()=>window.print());
+document.getElementById('backTop').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+const chapters=[...document.querySelectorAll('.chapter')];
+chapters.forEach(ch=>{
+ const btn=ch.querySelector('.collapse-btn'), body=ch.querySelector('.chapter-body');
+ btn.addEventListener('click',()=>{
+  const open=body.hidden;
+  body.hidden=!open; btn.textContent=open?'−':'＋'; btn.setAttribute('aria-expanded',String(open));
+ });
+});
+let allOpen=true;
+document.getElementById('toggleAll').addEventListener('click',(e)=>{
+ allOpen=!allOpen;
+ chapters.forEach(ch=>{const b=ch.querySelector('.chapter-body'),btn=ch.querySelector('.collapse-btn');b.hidden=!allOpen;btn.textContent=allOpen?'−':'＋';btn.setAttribute('aria-expanded',String(allOpen));});
+ e.currentTarget.querySelector('.label').textContent=allOpen?'全部收合':'全部展開';
+});
+
+const search=document.getElementById('searchInput'), empty=document.getElementById('emptyState');
+function clearMarks(el){el.querySelectorAll('mark').forEach(m=>m.replaceWith(document.createTextNode(m.textContent)));el.normalize();}
+function markText(el,term){
+ const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT,{acceptNode(n){return n.parentElement.closest('script,style,button,mark')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT}});
+ const nodes=[]; while(walker.nextNode()) nodes.push(walker.currentNode);
+ nodes.forEach(node=>{const t=node.nodeValue,idx=t.toLowerCase().indexOf(term.toLowerCase());if(idx>=0){const mark=document.createElement('mark');mark.textContent=t.slice(idx,idx+term.length);node.replaceWith(document.createTextNode(t.slice(0,idx)),mark,document.createTextNode(t.slice(idx+term.length)));}});
+}
+search.addEventListener('input',()=>{
+ const term=search.value.trim(); let shown=0;
+ chapters.forEach(ch=>{clearMarks(ch);const match=!term||ch.textContent.toLowerCase().includes(term.toLowerCase());ch.style.display=match?'':'none';if(match){shown++;if(term){ch.querySelector('.chapter-body').hidden=false;ch.querySelector('.collapse-btn').textContent='−';markText(ch,term);}}});
+ empty.style.display=shown?'none':'block';
+});
+
+const checks=[...document.querySelectorAll('#quickChecklist input')];
+const score=document.getElementById('checkScore');
+checks.forEach(c=>c.addEventListener('change',()=>{const n=checks.filter(x=>x.checked).length;score.textContent=`完成 ${n}／${checks.length} 項${n===checks.length?'，已通過快速檢核！':''}`;}));
+
+const progress=document.getElementById('progress');
+const navLinks=[...document.querySelectorAll('.sidebar a')];
+window.addEventListener('scroll',()=>{
+ const max=document.documentElement.scrollHeight-innerHeight; progress.style.width=(max>0?scrollY/max*100:0)+'%';
+ let active=0; chapters.forEach((ch,i)=>{if(ch.getBoundingClientRect().top<150)active=i;});
+ navLinks.forEach((a,i)=>a.classList.toggle('active',i===active));
+},{passive:true});
 </script>
-</body></html>
+</body>
+</html>
